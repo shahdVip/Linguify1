@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Switcher</title>
+  <style>
+    #image-container {
+      position: relative;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    .img-wrapper {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 1.5;
+      transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+      z-index: -1;
+    }
+
+    .img-wrapper.active {
+      opacity: 1;
+      z-index: 0;
+      transform: translateX(0);
+    }
+
+    .img-wrapper.prev {
+      transform: translateX(20%);
+    }
+
+    .img-wrapper.next {
+      transform: translateX(-20%);
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: blur(5px);
+      transition: filter 0.5s ease-in-out;
+    }
+
+    img.active {
+      filter: none;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<div id="image-container">
+  <div class="img-wrapper active">
+    <img src="https://via.placeholder.com/350x500?text=Slide+2" class="active">
+  </div>
+  <div class="img-wrapper next">
+    <img src="https://via.placeholder.com/350x500?text=Slide+1">
+  </div>
+  <div class="img-wrapper prev">
+    <img src="https://via.placeholder.com/350x500?text=Slide+3">
+  </div>
+</div>
+<button onclick="switchImage()">Switch Image</button>
+<script>
+  var images = document.querySelectorAll('.img-wrapper');
+  var currentIndex = 0;
+
+  function switchImage() {
+    images[currentIndex].classList.remove('active');
+    images[currentIndex].querySelector('img').classList.remove('active');
+    var nextIndex = (currentIndex + 1) % images.length;
+    images[nextIndex].classList.add('next');
+    images[nextIndex].querySelector('img').classList.add('active');
+    setTimeout(function() {
+      images[currentIndex].classList.add('prev');
+      images[nextIndex].classList.remove('next');
+      images[nextIndex].classList.add('active');
+      images[currentIndex].classList.remove('active');
+      images[currentIndex].querySelector('img').classList.remove('active');
+      currentIndex = nextIndex;
+    }, 50);
+  }
+</script>
+</body>
+</html>
