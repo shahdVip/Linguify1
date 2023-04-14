@@ -15,6 +15,9 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="main" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -41,7 +44,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "web.server",
+    "settings.editor.selected.configurable": "database.data.views",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -53,7 +56,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1681459985382</updated>
-      <workItem from="1681459986513" duration="2747000" />
+      <workItem from="1681459986513" duration="3811000" />
     </task>
     <task id="LOCAL-00001" summary="added all files">
       <created>1681460195377</created>
@@ -83,7 +86,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681461040726</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added all files">
+      <created>1681471612028</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681471612028</updated>
+    </task>
+    <task id="LOCAL-00006" summary="added all files">
+      <created>1681471890903</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681471890903</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
