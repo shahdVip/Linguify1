@@ -43,7 +43,7 @@ if (!$conn) {
 
 // Check if the sign-in form is submitted
 
-echo  "entered the if";
+
   // Get the email and password entered by the user
   $email = mysqli_real_escape_string($conn, $_POST['emailLogin']);
   $password = mysqli_real_escape_string($conn, $_POST['passwordLogin']);
