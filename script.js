@@ -43,31 +43,16 @@ $(document).ready(function() {
     }
   );
 
-  $('.next-button.password').click(
-    function(){
-      console.log("Something");
-      $('.password-section').addClass("fold-up");
-      $('.repeat-password-section').removeClass("folded");
-    }
-  );
+  $('.next-button.password').click(function(){
+    console.log("Something");
+    console.log("Something");
+    $('.repeat-password-section').addClass("fold-up");
+    $('.success').css("marginTop", 0);
+    $('form').submit(); // trigger the form submission
+  });
 
-  $('.repeat-password').on("change keyup paste",
-    function(){
-      if($(this).val()){
-        $('.icon-repeat-lock').addClass("next");
-      } else {
-        $('.icon-repeat-lock').removeClass("next");
-      }
-    }
-  );
 
-  $('.next-button.repeat-password').click(
-    function(){
-      console.log("Something");
-      $('.repeat-password-section').addClass("fold-up");
-      $('.success').css("marginTop", 0);
-    }
-  );
+
 });
 
 
