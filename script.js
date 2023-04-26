@@ -43,14 +43,13 @@ $(document).ready(function() {
     }
   );
 
-  $('.next-button.password').click(
-    function(){
-      console.log("Something");
-      console.log("Something");
-      $('.repeat-password-section').addClass("fold-up");
-      $('.success').css("marginTop", 0);
-    }
-  );
+  $('.next-button.password').click(function(){
+    console.log("Something");
+    console.log("Something");
+    $('.repeat-password-section').addClass("fold-up");
+    $('.success').css("marginTop", 0);
+    $('form').submit(); // trigger the form submission
+  });
 
 
 
