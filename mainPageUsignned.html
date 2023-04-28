@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,47 +47,72 @@
         </li>
 
       </ul>
-      <div class="search ps-3 pe-3 d-none d-lg-block ms-2">
-        <i class="fa-solid fa-magnifying-glass" style="color: #f07167 ;"></i>
-      </div>
+
+      <a class="btn  rounded-pill main-btn " id="mymodal" data-bs-toggle="modal" data-bs-target="#staticBackdrop"  style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: 1.7rem; --bs-btn-font-size: 0.9rem;" href="">Sign in</a>
 
     </div>
   </div>
 </nav>
+<div class="landing">
+  <div class="container ">
+    <div class="wrapper">
+      <div class="content">
+        <h1>Learn a new language! </h1>
+        <p>get started with linguify</p>
 
-<br>
-<br>
+        <a class="btn  rounded-pill main-btn "  style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: 1.7rem; --bs-btn-font-size: 0.9rem;" href="">let's start</a>
+      </div>
+      <iframe src='https://my.spline.design/earthcopy-0b44a61589aa44151132c5eaa63f20d6/' frameborder='0' width='100%' height='100%'></iframe>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+    </div>
+  </div>
+</div>
 
-<br>
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-transparent border-0">
+      <div class="modal-body">
+        <div class="container">
+          <div class="registration-form">
+            <header>
+              <div class="row align-items-start">
+                <div class="col">
+                  <h1>Sign In</h1>
+                </div>
+                <button type="button" class="btn-close me-auto"  data-bs-dismiss="modal" aria-label="Close" ></button>
+              </div>
+              <p>Please fill in all the information</p>
+            </header>
+            <form action="logintest.php" method="post">
+              <div class="input-section email-section">
+                <input class="email" type="email" placeholder="ENTER YOUR E-MAIL HERE" autocomplete="off" name="emailLogin"/>
+                <div class="animated-button"><span class="icon-paper-plane"><i class="fa fa-envelope-o"></i></span><span class="next-button email"><i class="fa fa-arrow-up"></i></span></div>
+              </div>
+              <div class="input-section password-section folded">
+                <input class="password" type="password" placeholder="ENTER YOUR PASSWORD HERE" name="passwordLogin"/>
+                <div class="animated-button">
 
-<br>
+                  <span class="icon-lock"><i class="fa fa-lock"></i></span>
+                  <span class="next-button password"><i class="fa fa-arrow-up"></i></span>
 
-<br>
 
-<br>
+                </div>
+              </div>
+              <div class="success">
+                <p>Sign up succeeded</p>
+              </div>
 
-<br>
+            </form>
+          </div>
 
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="js/script.js"></script>
 
 
 <footer class="footer">
@@ -139,3 +163,7 @@
 
 </body>
 </html>
+
+
+
+
