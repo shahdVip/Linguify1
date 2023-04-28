@@ -1,6 +1,5 @@
-<?php
-// Start the session to store user information
 
+<?php
 
 // Connect to the database
 $db_host = "localhost";
@@ -19,14 +18,10 @@ if (!$conn) {
 $email = mysqli_real_escape_string($conn, $_POST['email']);
 $password = mysqli_real_escape_string($conn, $_POST['Password']);
 $fullName = mysqli_real_escape_string($conn, $_POST['fullName']);
-$degree = mysqli_real_escape_string($conn, $_POST['degree']);
-$university = mysqli_real_escape_string($conn, $_POST['university']);
-$phone= mysqli_real_escape_string($conn, $_POST['phone']);
-$languages = mysqli_real_escape_string($conn, $_POST['languages']);
+
+$age = mysqli_real_escape_string($conn, $_POST['age']);
+$phone = mysqli_real_escape_string($conn, $_POST['phone']);
 $repeatPassword = mysqli_real_escape_string($conn, $_POST['repeatPassword']);
-
-
-
 
 
 if ($password !== $repeatPassword) {
@@ -44,10 +39,10 @@ if (mysqli_num_rows($result) > 0) {
 
 // Greet the response with the variables
 echo "Hello, $fullName! Thank you for signing up.";
-echo $email.'   '.$password.'   '.$phone.'   '.$fullName.'   '.$degree.'   '.$university.'   '.$languages;
+echo $email . '   ' . $password . '   ' . $phone . '   ' . $fullName . '   ' . $age . '   ' ;
 
 // Insert the variables into the "teachers" table
-$query = "INSERT INTO teachers (email, password, fullName, phoneNumber, university, degree, languages) VALUES ('$email', '$password', '$fullName','$phone','$university','$degree','$languages')";
+$query = "INSERT INTO students (email, password, fullName, phoneNumber, age) VALUES ('$email', '$password', '$fullName','$phone','$age')";
 //$conn->query($query);
 if (mysqli_query($conn, $query)) {
   echo "Record inserted successfully.";
@@ -56,4 +51,3 @@ if (mysqli_query($conn, $query)) {
 }
 
 
-// Start the session to store user information
