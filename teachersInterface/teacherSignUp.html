@@ -6,12 +6,42 @@
   <title>Title</title>
 
   <link rel="stylesheet" href="cssTeachers/signUpStyles.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('form').on('submit', function(e) {
+        e.preventDefault(); // Prevent form submission
+
+        // Get form data
+        var formData = $('#teachersSignUpForm').serialize();
+
+        // Perform AJAX request
+        $.ajax({
+          type: 'POST',
+          url: 'phpTeachers/teacherSignUpHandle.php',
+          data: formData,
+          success: function(response) {
+            // Handle the response
+            if (response === 'success') {
+              // Successful sign-in, redirect to the conf page
+              window.location.href = '../confirmSignUp.html';
+            }
+            else{
+              $('#error-msg').text(response).show();
+            }
+          }
+        });
+      });
+    });
+
+  </script>
 </head>
 <body>
 
 <div>
 
-  <form class="form" style="align-items: center" action="phpTeachers/teacherSignUpHandle.php" method="post">
+  <form class="form" style="align-items: center" action="phpTeachers/teacherSignUpHandle.php" method="post" id="teachersSignUpForm">
     <ul class="wrapper">
 
       <li style="--i:9;"><input class="input" type="text" placeholder="Full name" required="" name="fullName"></li>
@@ -23,6 +53,7 @@
       <li style="--i:3;"><input class="input" type="password" placeholder="Repeat password" required="" name="repeatPassword"></li>
       <li style="--i:2;"><input class="input" type="text" placeholder="Languages you have experience in?" required="" name="languages"></li>
       <button style="--i:1;" name="submit">Submit</button>
+      <p id="error-msg" class="error-message" style="display: none;"></p>
     </ul>
   </form>
 </div>

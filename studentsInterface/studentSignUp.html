@@ -6,21 +6,55 @@
   <title>Title</title>
 
   <link rel="stylesheet" href="cssStudents/signUpStyles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('form').on('submit', function(e) {
+        e.preventDefault(); // Prevent form submission
+
+        // Get form data
+        var formData = $('#studentSignUpForm').serialize();
+
+        // Perform AJAX request
+        $.ajax({
+          type: 'POST',
+          url: 'phpStudents/studentSignUphandeling.php',
+          data: formData,
+          success: function(response) {
+            // Handle the response
+            if (response === 'success') {
+              // Successful sign-in, redirect to the desired page
+              window.location.href = '../confirmSignUp.html';
+            }
+            else{
+              $('#error-msg').text(response).show();
+            }
+          }
+        });
+      });
+    });
+
+  </script>
 </head>
 <body>
 
 <div>
 
-  <form class="form" action="phpStudents/studentSignUphandeling.php" method="post" style="align-items: center">
+  <form class="form" action="phpStudents/studentSignUphandeling.php" method="post" style="align-items: center" id="studentSignUpForm">
     <ul class="wrapper">
 
       <li style="--i:7;"><input class="input" type="text" placeholder="Full name" required="" name="fullName"></li>
       <li style="--i:6;"><input class="input" type="text" placeholder="Phone number"  pattern="[0-9]*" oninput="validateInput(this)" required="" name="phone" ></li>
-      <li style="--i:5;"><input class="input" type="email" placeholder="E-mail" required="" name="email"></li>
+      <li style="--i:5;"><input class="input" type="email" placeholder="E-mail" required="" name="email" id="email"></li>
+
       <li style="--i:4;"><input class="input" type="number" placeholder="Age" required="" name="age" pattern="[0-9]*" oninput="validateInput(this)"></li>
-      <li style="--i:3;"><input class="input" type="password" placeholder="Passwsord" required="" name="Password"></li>
+      <li style="--i:3;"><input class="input" type="password" placeholder="Passwsord" required="" name="Password" id="password"></li>
       <li style="--i:2;"><input class="input" type="password" placeholder="Repeat password" required="" name="repeatPassword"></li>
-      <button style="--i:1;" name="submit">Submit</button>
+
+      <button  style="--i:1;" name="submit" id="submit" >Submit</button>
+      <br>
+      <br>
+      <p id="error-msg" class="error-message" style="display: none;"></p>
     </ul>
   </form>
 </div>
@@ -30,6 +64,8 @@
   function validateInput(input) {
     input.value = input.value.replace(/[^0-9]/g, '');
   }
+
+
 </script>
 
 </body>

@@ -30,7 +30,7 @@ $repeatPassword = mysqli_real_escape_string($conn, $_POST['repeatPassword']);
 
 
 if ($password !== $repeatPassword) {
-  echo "Password and Repeat Password do not match.";
+  echo "Passwords do not match.";
   exit;
 }
 
@@ -43,14 +43,15 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 // Greet the response with the variables
-echo "Hello, $fullName! Thank you for signing up.";
-echo $email.'   '.$password.'   '.$phone.'   '.$fullName.'   '.$degree.'   '.$university.'   '.$languages;
+
 
 // Insert the variables into the "teachers" table
 $query = "INSERT INTO teachers (email, password, fullName, phoneNumber, university, degree, languages) VALUES ('$email', '$password', '$fullName','$phone','$university','$degree','$languages')";
-//$conn->query($query);
-if (mysqli_query($conn, $query)) {
-  echo "Record inserted successfully.";
+$query2 = "INSERT INTO users (email, password, usertype) VALUES ('$email', '$password', true)";
+
+
+if (mysqli_query($conn, $query) &&mysqli_query($conn, $query2)) {
+  echo "success";
 } else {
   echo "Error inserting record: " . mysqli_error($conn);
 }

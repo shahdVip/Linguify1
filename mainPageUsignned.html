@@ -17,6 +17,39 @@
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/05ac3d6c76.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $('form').on('submit', function(e) {
+        e.preventDefault(); // Prevent form submission
+
+        // Get form data
+        var email = $('#email').val();
+        var password = $('#password').val();
+
+        // Perform AJAX request
+        $.ajax({
+          type: 'POST',
+          url: 'logintest.php',
+          data: { emailLogin: email, passwordLogin: password },
+          success: function(response) {
+            // Handle the response
+            if (response === 'success') {
+              // Successful sign-in, redirect to the desired page
+              window.location.href = 'template.html';
+            } else {
+              // Failed sign-in, display the error message
+              $('#error-msg').text(response).show();
+            }
+          }
+        });
+      });
+    });
+
+    function resetForm() {
+      document.getElementById("signInForm").reset();
+    }
+  </script>
 </head>
 <body>
 <div class="container"id="home">
@@ -68,6 +101,7 @@
   </div>
 </div>
 
+
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content bg-transparent border-0">
@@ -78,18 +112,19 @@
               <div class="row align-items-start">
                 <div class="col">
                   <h1>Sign In</h1>
+                  <p id="error-msg" class="error-message" style="display: none;"></p>
                 </div>
-                <button type="button" class="btn-close me-auto"  data-bs-dismiss="modal" aria-label="Close" ></button>
+                <button type="button" class="btn-close me-auto"  data-bs-dismiss="modal" aria-label="Close" onclick="location.reload();"></button>
               </div>
               <p>Please fill in all the information</p>
             </header>
-            <form action="logintest.php" method="post">
+            <form action="logintest.php" method="post" id="signInForm">
               <div class="input-section email-section">
-                <input class="email" type="email" placeholder="ENTER YOUR E-MAIL HERE" autocomplete="off" name="emailLogin"/>
+                <input class="email" type="email" placeholder="ENTER YOUR E-MAIL HERE" autocomplete="off" name="emailLogin" id="email"/>
                 <div class="animated-button"><span class="icon-paper-plane"><i class="fa fa-envelope-o"></i></span><span class="next-button email"><i class="fa fa-arrow-up"></i></span></div>
               </div>
               <div class="input-section password-section folded">
-                <input class="password" type="password" placeholder="ENTER YOUR PASSWORD HERE" name="passwordLogin"/>
+                <input class="password" type="password" placeholder="ENTER YOUR PASSWORD HERE" name="passwordLogin" id="password"/>
                 <div class="animated-button">
 
                   <span class="icon-lock"><i class="fa fa-lock"></i></span>
@@ -98,7 +133,7 @@
 
                 </div>
               </div>
-              <div class="success">
+              <div class="success" id="succeeded" style="display: none;">
                 <p>Sign up succeeded</p>
               </div>
 
