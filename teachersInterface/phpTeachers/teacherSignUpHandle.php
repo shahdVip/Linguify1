@@ -1,7 +1,6 @@
-
 <?php
 // Start the session to store user information
-session_start();
+
 
 // Connect to the database
 $db_host = "localhost";
@@ -30,13 +29,13 @@ $repeatPassword = mysqli_real_escape_string($conn, $_POST['repeatPassword']);
 
 
 
-/*if ($password !== $repeatPassword) {
-  echo "Password and Repeat Password do not match.";
+if ($password !== $repeatPassword) {
+  echo "Passwords do not match.";
   exit;
-}*/
+}
 
 // Check if the email already exists in the database
-$query = "SELECT * FROM teachers WHERE email='$email'";
+$query = "SELECT * FROM users WHERE email='$email'";
 $result = mysqli_query($conn, $query);
 if (mysqli_num_rows($result) > 0) {
   echo "Email already exists.";
@@ -44,16 +43,18 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 // Greet the response with the variables
-echo "Hello, $fullName! Thank you for signing up.";
-echo $email.'   '.$password.'   '.$phone.'   '.$fullName.'   '.$degree.'   '.$university.'   '.$languages;
+
 
 // Insert the variables into the "teachers" table
 $query = "INSERT INTO teachers (email, password, fullName, phoneNumber, university, degree, languages) VALUES ('$email', '$password', '$fullName','$phone','$university','$degree','$languages')";
-//$conn->query($query);
-if (mysqli_query($conn, $query)) {
-  echo "Record inserted successfully.";
+$query2 = "INSERT INTO users (email, password, usertype) VALUES ('$email', '$password', true)";
+
+
+if (mysqli_query($conn, $query) &&mysqli_query($conn, $query2)) {
+  echo "success";
 } else {
   echo "Error inserting record: " . mysqli_error($conn);
 }
 
 
+// Start the session to store user information

@@ -8,7 +8,10 @@ body{
     line-height: 1.5;
 
     font-family: 'Pacifico', cursive;
-height: 10000px;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 *{
     margin:0;
@@ -50,8 +53,8 @@ height: 10000px;
     font-weight: bold;
     color: #373b52;
 }
-.navbar .main-btn:hover,
-.navbar .main-btn:focus
+.navbar .main-btn:hover
+
 {
     background-color: var(--pink-color);
     color: var(--whitesmoke-color);
@@ -208,6 +211,9 @@ iframe{
     width: 20%;
     background-color: #f07167;
 }
+.content{
+  flex: 1;
+}
 .animated-button span {
     display: flex;
     flex-direction: row;
@@ -278,6 +284,7 @@ ul{
 .footer{
     background-color: #373b52 ;
     padding: 70px 0 10px;
+
 }
 .footer-col{
     width: 25%;
