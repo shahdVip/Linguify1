@@ -1,4 +1,3 @@
-
 <?php
 
 // Connect to the database
@@ -22,10 +21,12 @@ $fullName = mysqli_real_escape_string($conn, $_POST['fullName']);
 $age = mysqli_real_escape_string($conn, $_POST['age']);
 $phone = mysqli_real_escape_string($conn, $_POST['phone']);
 $repeatPassword = mysqli_real_escape_string($conn, $_POST['repeatPassword']);
+$isStudent = false;
+
 
 
 if ($password !== $repeatPassword) {
-  echo "Password and Repeat Password do not match.";
+  echo "Passwords do not match.";
   exit;
 }
 
@@ -33,19 +34,17 @@ if ($password !== $repeatPassword) {
 $query = "SELECT * FROM users WHERE email='$email'";
 $result = mysqli_query($conn, $query);
 if (mysqli_num_rows($result) > 0) {
-  echo "Email already exists.";
+  echo 'Email already exists.';
   exit;
 }
 
-// Greet the response with the variables
-echo "Hello, $fullName! Thank you for signing up.";
-echo $email . '   ' . $password . '   ' . $phone . '   ' . $fullName . '   ' . $age . '   ' ;
 
-// Insert the variables into the "teachers" table
+
 $query = "INSERT INTO students (email, password, fullName, phoneNumber, age) VALUES ('$email', '$password', '$fullName','$phone','$age')";
-//$conn->query($query);
-if (mysqli_query($conn, $query)) {
-  echo "Record inserted successfully.";
+$query2 = "INSERT INTO users (email, password, usertype) VALUES ('$email', '$password', false)";
+
+if (mysqli_query($conn, $query)&&mysqli_query($conn, $query2)) {
+  echo "success";
 } else {
   echo "Error inserting record: " . mysqli_error($conn);
 }

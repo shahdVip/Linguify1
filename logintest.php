@@ -1,35 +1,6 @@
 <?php
-/*
-if(isset($_POST['emailLogin']) && isset($_POST['passwordLogin']) ){
-
-  $email=$_POST['emailLogin'];
-  $password=$_POST['passwordLogin'];
-
-  try{
-
-    $db = new mysqli('localhost', 'root','','Linguify');
-    $querystr="select * from users ";
-    $res=$db->query($querystr);
-    for($i=0; $i<$res->num_rows;$i++){
-
-      $row=$res->fetch_assoc();
-      echo$row['email'].'       '.$row['password'];
-
-
-    }
-    $db->close();
-
-
-  }catch(Exception $e){}
-
-}
-*/
-?>
-
-
-<?php
 // Start the session to store user information
-session_start();
+
 
 // Connect to the database
 $db_host = "localhost";
@@ -56,29 +27,22 @@ if (!$conn) {
   if (mysqli_num_rows($result) == 1) {
     $row = mysqli_fetch_assoc($result);
     if ($password==$row['password']) {
-      // The email and password are correct, set session variables and redirect to the dashboard page
-      $_SESSION['user_id'] = $row['id'];
-      $_SESSION['user_email'] = $row['email'];
-      header("Location: signUp.html");
+echo'success';
+
+   //   header("Location: template.html");
       exit();
     } else {
       // The password is incorrect, show an error message
-      $error_msg = "Incorrect password";
-      echo $row['password'].'     '.$password;
+      echo "Incorrect password";
+
 
     }
   } else {
     // The email does not exist in the database, show an error message
-    $error_msg = "Email not found";
+    echo 'incorrect email';
   }
 
 mysqli_close($conn);
 
 
-if (isset($error_msg)) { ?>
-<div class="error">
-  <?php echo $error_msg; ?>
-</div>
-<?php
-}
-?>
+
