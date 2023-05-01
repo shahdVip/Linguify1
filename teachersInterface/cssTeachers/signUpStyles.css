@@ -1,21 +1,38 @@
 
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body {
+  line-height: 1.5;
+  font-family: Tajawal;
+}
+.test {
+  position: absolute;
+  left: 39%;
+  top: 5%;
+  font-weight: bold;
+  font-size: 35px;
+  color: #373b52;
+  transform: skewY(-14deg);
+
+}
 div {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  margin-top:48px;
 }
+
 .input, button {
   width: 100%;
   height: 40px;
   position: relative;
   padding: 10px;
-  border: 0.1px solid #575cb5;
+  border: 0.1px solid #f07167;
 }
 
 button {
-  background: #6d74e3;
+  background: #f07167;
   border: none;
 }
 
@@ -24,7 +41,7 @@ button {
   transform: skewY(-14deg);
 }
 
-.wrapper li, button {
+.wrapper li {
   position: relative;
   list-style: none;
   width: 200px;
@@ -33,11 +50,23 @@ button {
   transition: 0.3s;
   color: white;
 }
+.wrapper button {
+  position: relative;
+  list-style: none;
+  width: 220px;
+  height:60px;
+  z-index: var(--i);
+  transition: 0.3s;
+  color: white;
+  font-weight:bold;
+
+}
+
 
 .wrapper li::before, button::before {
   position: absolute;
   content: '';
-  background: #6d74e3;
+  background: #f07167;
   top: 0;
   left: -50px;
   width: 50px;
@@ -50,7 +79,7 @@ button {
 .wrapper li::after, button::after {
   position: absolute;
   content: '';
-  background: #6d74e3;
+  background: #f07167;
   width: 215px;
   height: 45px;
   top: -48px;
@@ -61,87 +90,121 @@ button {
 }
 
 .wrapper li:nth-child(1)::after, .wrapper li:nth-child(1)::before {
-  background-color: #d8daf7;
+  background-color: #f9d9d6;
 }
 
 .wrapper li:nth-child(2)::after, .wrapper li:nth-child(2)::before {
-  background-color: #c2c5f3;
+  background-color: #f9d1cd;
 }
 
 .wrapper li:nth-child(3)::after, .wrapper li:nth-child(3)::before {
-  background-color: #989deb;
+  background-color: #f9c9c4;
 }
 
-.wrapper li:nth-child(4)::after, .wrapper li:nth-child(3)::before {
-  background-color: #989deb;
+.wrapper li:nth-child(4)::after, .wrapper li:nth-child(4)::before {
+  background-color: #f8c0bb;
 }
 
-.wrapper li:nth-child(5)::after, .wrapper li:nth-child(3)::before {
-  background-color: #989deb;
+.wrapper li:nth-child(5)::after, .wrapper li:nth-child(5)::before {
+  background-color: #f7b8b2;
+}
+.wrapper li:nth-child(6)::after, .wrapper li:nth-child(6)::before {
+  background-color: #f6b1ab;
+}
+.wrapper li:nth-child(7)::after, .wrapper li:nth-child(7)::before {
+  background-color: #f5a9a2;
+}
+.wrapper li:nth-child(8)::after, .wrapper li:nth-child(8)::before {
+  background-color: #f2877f;
 }
 
 li .input {
   outline: none;
   border: none;
-  color: black;
+  color: gray;
 }
 
 li .input::placeholder {
-  color: black;
+  color: white;
+  font-size: smaller;
 }
 
 li:nth-child(1) .input {
-  background: #d8daf7;
+  background: #f9d9d6;
 }
 
 li:nth-child(2) .input {
-  background: #c2c5f3;
+  background: #f9d1cd;
 }
 
 li:nth-child(3) .input {
-  background: #989deb;
+  background: #f9c9c4;
 }
 
 li:nth-child(4) .input {
-  background: #c2c5f3;
+  background: #f8c0bb;
 }
 
 li:nth-child(5) .input {
-  background: #989deb;
+  background: #f7b8b2;
 }
+li:nth-child(6) .input {
+  background: #f6b1ab;
+}
+li:nth-child(7) .input {
+  background: #f5a9a2;
+}
+
+li:nth-child(8) .input {
+  background: #f2877f;
+}
+
 
 
 li:nth-child(1) .input:focus {
   outline: none;
-  border: 3.5px solid #d8daf7;
+  border: 1.5px solid white;
 }
 
 li:nth-child(2) .input:focus {
   outline: none;
-  border: 3.5px solid #c2c5f3;
+  border: 1.5px solid white;
 }
 
 li:nth-child(3) .input:focus {
   outline: none;
-  border: 3.5px solid #989deb;
+  border: 1.5px solid white;
 }
 
 li:nth-child(4) .input:focus {
   outline: none;
-  border: 3.5px solid #989deb;
+  border: 1.5px solid white;
 }
 
 li:nth-child(5) .input:focus {
   outline: none;
-  border: 3.5px solid #989deb;
+  border: 1.5px solid white;
 }
+li:nth-child(6) .input:focus {
+  outline: none;
+  border: 1.5px solid white;
+}
+li:nth-child(7) .input:focus {
+  outline: none;
+  border: 1.5px solid white;
+}
+li:nth-child(8) .input:focus {
+  outline: none;
+  border: 1.5px solid white;
+}
+
 
 .wrapper li:hover, button:hover {
   transform: translateX(-20px);
 }
 
 button:hover, button:hover::before, button:hover::after {
-  background: #575cb5;
+  background: #f6756a;
 }
 
 button:active {

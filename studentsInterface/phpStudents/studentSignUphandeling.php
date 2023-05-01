@@ -26,7 +26,7 @@ $isStudent = false;
 
 
 if ($password !== $repeatPassword) {
-  echo "Passwords do not match.";
+  echo "Passwords do not match!";
   exit;
 }
 
