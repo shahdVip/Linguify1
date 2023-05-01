@@ -26,8 +26,19 @@ if (!$conn) {
   $result = mysqli_stmt_get_result($stmt);
   if (mysqli_num_rows($result) == 1) {
     $row = mysqli_fetch_assoc($result);
+
     if ($password==$row['password']) {
-echo'success';
+      setcookie("variable", $email, time() + 3600);
+      if($row['usertype']==1){
+
+        echo 'success teacher';
+      }
+      else if($row['usertype']==0){
+
+        echo 'success student';
+      }
+
+     // echo'success';
 
    //   header("Location: template.html");
       exit();
