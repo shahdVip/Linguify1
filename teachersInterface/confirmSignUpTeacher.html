@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="cssTeachers/confirmationOTP.css">
+
+</head>
+<body>
+<div class="container">
+  <header></header>
+  <h4>Enter OTP</h4>
+  <p>A verification key of 4-numbers has been sent to the filled email, please enter it to start your journey! </p>
+  <form action="phpTeachers/confirmSignUpTeacherHandle.php" method="post">
+    <div class="input-field">
+      <input type="number" name="num1" pattern="[0-9]*" oninput="validateInput(this)" />
+      <input type="number" disabled name="num2" pattern="[0-9]*" oninput="validateInput(this)" />
+      <input type="number" disabled  name="num3" pattern="[0-9]*" oninput="validateInput(this)"/>
+      <input type="number" disabled name="num4" pattern="[0-9]*" oninput="validateInput(this)"/>
+    </div>
+    <button name="submit">Verify</button>
+  </form>
+
+</div>
+
+
+<script src="../js/confirmationOTP.js"></script>
+<script>
+  function validateInput(input) {
+    input.value = input.value.replace(/[^0-9]/g, '');
+  }
+</script>
+</body>
+
+</html>
