@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53ac28f2-83f3-414a-9cd8-56b711191e13" name="Changes" comment="added all files">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/template.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/template.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainPageUsignned.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainPageUsignned.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/studentsInterface/cssStudents/signUpStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/studentsInterface/cssStudents/signUpStyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studentsInterface/phpStudents/studentSignUphandeling.php" beforeDir="false" afterPath="$PROJECT_DIR$/studentsInterface/phpStudents/studentSignUphandeling.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/studentsInterface/studentSignUp.html" beforeDir="false" afterPath="$PROJECT_DIR$/studentsInterface/studentSignUp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teachersInterface/cssTeachers/signUpStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/teachersInterface/cssTeachers/signUpStyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teachersInterface/teacherSignUp.html" beforeDir="false" afterPath="$PROJECT_DIR$/teachersInterface/teacherSignUp.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +58,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/xampp/php",
+    "last_opened_file_path": "C:/Users/Lenovo/PhpstormProjects/untitled/qq.html",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -128,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682642146366</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added all files">
+      <created>1683228013088</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1683228013088</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
