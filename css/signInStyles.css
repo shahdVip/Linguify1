@@ -71,7 +71,7 @@ body {
   background-color: #f8f9fa;
 }
 .registration-form .input-section.folded span {
-  background-color: #f07167 ;
+  background-color: #4FBAF4;
 }
 .registration-form .input-section.folded + .folded {
   width: 90%;
@@ -110,7 +110,7 @@ body {
 }
 .animated-button {
   width: 20%;
-  background-color: #f07167;
+  background-color: #4FBAF4;
 }
 .animated-button span {
   display: flex;

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 :root{
     --whitesmoke-color: #f3f5fb;
-    --pink-color: #f07167;
+    --blue-color: #4FBAF4;
 }
 
 body{
@@ -39,17 +39,17 @@ body{
 .navbar .navbar-nav .nav-link.active,
 .navbar .navbar-nav .nav-link:focus,
 .navbar .navbar-nav .nav-link:hover{
-    color: var(--pink-color)
+    color: var(--blue-color)
 }
 .navbar .search{
-    border-left: 1px solid var(--pink-color);
+    border-left: 1px solid var(--blue-color);
 }
 .navbar .search svg{
-    color: var(--pink-color);
+    color: var(--blue-color);
 }
 .navbar .main-btn {
     background-color: transparent;
-    border-color: var(--pink-color);
+    border-color: var(--blue-color);
 
     font-weight: bold;
     color: #373b52;
@@ -57,7 +57,7 @@ body{
 .navbar .main-btn:hover
 
 {
-    background-color: var(--pink-color);
+    background-color: var(--blue-color);
     color: var(--whitesmoke-color);
 }
 /*end navbar*/
@@ -95,14 +95,14 @@ iframe{
 }
 .landing .content .main-btn {
     background-color: transparent;
-    border-color: var(--pink-color);
+    border-color: var(--blue-color);
     font-weight: bold;
     color: #373b52;
 }
 .landing .content .main-btn:hover,
 .landing .content .main-btn:focus
 {
-    background-color: var(--pink-color);
+    background-color: var(--blue-color);
     color: var(--whitesmoke-color);
 }
 /*end*/
@@ -171,7 +171,7 @@ iframe{
     background-color: #f8f9fa;
 }
 .registration-form .input-section.folded span {
-    background-color: #f07167 ;
+    background-color: var(--blue-color) ;
 }
 .registration-form .input-section.folded + .folded {
     width: 90%;
@@ -210,7 +210,7 @@ iframe{
 }
 .animated-button {
     width: 20%;
-    background-color: #f07167;
+    background-color: var(--blue-color);
 }
 .content{
   flex: 1;
@@ -304,7 +304,7 @@ ul{
     position: absolute;
     left:0;
     bottom: -10px;
-    background-color:#f07167;
+    background-color: var(--blue-color);
     height: 2px;
     box-sizing: border-box;
     width: 50px;
