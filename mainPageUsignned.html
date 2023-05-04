@@ -82,7 +82,7 @@
       </ul>
 
       <a class="btn  rounded-pill main-btn " id="mymodal" data-bs-toggle="modal" data-bs-target="#staticBackdrop"  style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: 1.7rem; --bs-btn-font-size: 0.9rem;" href="">Sign in</a>
-      <a class="btn ms-2 rounded-pill main-btn "   style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: 1.7rem; --bs-btn-font-size: 0.9rem;" href="">Sign up</a>
+      <a class="btn ms-2 rounded-pill main-btn "  data-bs-toggle="modal" data-bs-target="#signupBackdrop" style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: 1.7rem; --bs-btn-font-size: 0.9rem;" href="">Sign up</a>
 
 
     </div>
@@ -150,6 +150,57 @@
   </div>
 </div>
 <script src="js/script.js"></script>
+
+<div class="modal fade" id="signupBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel1"> SIGN UP AS</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body justify-content-center">
+        <div class="radio-inputs">
+          <label>
+            <input class="radio-input" type="radio" name="engine">
+            <span class="radio-tile">
+					<span class="radio-icon">
+						<script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                        <lord-icon
+                                src="https://cdn.lordicon.com/kqcykigc.json"
+                                trigger="hover"
+                                colors="primary:#121331,secondary:#4bb3fd,tertiary:#92140c"
+                                stroke="60"
+                                style="width:250px;height:250px">
+                        </lord-icon>
+					</span>
+					<span class="radio-label">Student</span>
+				</span>
+          </label>
+          <label>
+            <input checked="" class="radio-input" type="radio" name="engine">
+            <span class="radio-tile">
+				<span class="radio-icon">
+   				<script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                    <lord-icon
+                            src="https://cdn.lordicon.com/ttioogfl.json"
+                            trigger="morph"
+                            colors="primary:#121331,secondary:#ebe6ef,tertiary:#4bb3fd,quaternary:#92140c,quinary:#f9c9c0"
+                            style="width:250px;height:250px">
+                    </lord-icon>
+				</span>
+				<span class="radio-label">Instructor</span>
+			</span>
+          </label>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn rounded-pill main-btn">Next</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <footer class="footer">
