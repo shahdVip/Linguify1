@@ -50,6 +50,31 @@
       document.getElementById("signInForm").reset();
     }
   </script>
+
+  <script>
+    function redirect() {
+      // Get all the radio buttons with name="radio-btn"
+      var radios = document.getElementsByName('engine');
+      var selectedRadio = null;
+
+      // Loop through all the radio buttons to find the selected one
+      for (var i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+          selectedRadio = radios[i].value;
+          break;
+        }
+      }
+
+      // Redirect the user based on selected radio button
+      if (selectedRadio === 'option1') {
+        window.location.href = 'studentsInterface/finalStuSignup.html';
+      } else if (selectedRadio === 'option2') {
+        window.location.href = 'teachersInterface/finalTeacherSignUp.html';
+      } else {
+        alert('Please select an option');
+      }
+    }
+  </script>
 </head>
 <body>
 <div class="container"id="home">
@@ -161,7 +186,7 @@
       <div class="modal-body justify-content-center">
         <div class="radio-inputs">
           <label>
-            <input class="radio-input" type="radio" name="engine">
+            <input class="radio-input"  type="radio" name="engine" value="option1" >
             <span class="radio-tile">
 					<span class="radio-icon">
 						<script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
@@ -177,7 +202,7 @@
 				</span>
           </label>
           <label>
-            <input checked="" class="radio-input" type="radio" name="engine">
+            <input checked="" class="radio-input" type="radio" name="engine" value="option2">
             <span class="radio-tile">
 				<span class="radio-icon">
    				<script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
@@ -196,7 +221,7 @@
       </div>
       <div class="modal-footer">
 
-        <button type="button" class="btn rounded-pill main-btn">Next</button>
+        <button type="button" class="btn rounded-pill main-btn" onclick="redirect()">Next</button>
       </div>
     </div>
   </div>

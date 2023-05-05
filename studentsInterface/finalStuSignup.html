@@ -106,21 +106,23 @@
 </div>
 
 <div class="container text-center h-100 " style="position: relative; left:13%;">
+  <form class="form" style="align-items:center" action="phpStudents/studentSignUphandeling.php" method="post" id="studentSignUpForm">
+
+
+
   <div class="row h-100   ">
     <div class="col-4 pt-4  ">
-      <form class="form" style="align-items:center" action="phpStudents/studentSignUphandeling.php" method="post" id="studentSignUpForm">
         <ul class="wrapper">
 
           <li style="--i:3;"><input class="input" type="text" placeholder="Full name" required="" name="fullName"></li>
           <li style="--i:2;"><input class="input" placeholder="Phone number" required="" name="phone"  pattern="[0-9]*" oninput="validateInput(this)" ></li>
-          <li style="--i:1;"><input class="input" type="text" placeholder="Age" required="" name="Age"></li>
+          <li style="--i:1;"><input class="input" type="text" placeholder="Age" required="" name="age"></li>
 
 
         </ul>
-      </form>
+
     </div>
     <div class="col-5  ">
-      <form class="form" style="align-items: center" action="phpStudents/studentSignUphandeling.php" method="post" id="kstudentSignUpForm">
         <ul class="wrapper">
 
           <li style="--i:4;"><input class="input" type="email" placeholder="E-mail" required="" name="email"></li>
@@ -131,10 +133,10 @@
 
           <p id="error-msg" class="error-message" style="display: none;"></p>
         </ul>
-      </form>
+
     </div>
   </div>
-
+  </form>
 </div>
 
 

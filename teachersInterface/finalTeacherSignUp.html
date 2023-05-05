@@ -18,6 +18,34 @@
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/05ac3d6c76.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('form').on('submit', function(e) {
+        e.preventDefault(); // Prevent form submission
+
+        // Get form data
+        var formData = $('#teachersSignUpForm').serialize();
+
+        // Perform AJAX request
+        $.ajax({
+          type: 'POST',
+          url: 'phpTeachers/teacherSignUpHandle.php',
+          data: formData,
+          success: function(response) {
+            // Handle the response
+            if (response === 'success') {
+              // Successful sign-in, redirect to the conf page
+              window.location.href = 'confirmSignUpTeacher.html';
+            }
+            else{
+              $('#error-msg').text(response).show();
+            }
+          }
+        });
+      });
+    });
+
+  </script>
 </head>
 <body>
 <div class="container"id="home">
@@ -78,9 +106,10 @@
 </div>
 
 <div class="container text-center h-100 " style="position: relative; left:10%;">
+  <form class="form" style="align-items:center" action="phpTeachers/teacherSignUpHandle.php" method="post" id="teachersSignUpForm">
+
   <div class="row h-100   ">
     <div class="col-4 pt-4  ">
-      <form class="form" style="align-items:center" action="phpTeachers/teacherSignUpHandle.php" method="post" id="teachersSignUpForm">
         <ul class="wrapper">
 
           <li style="--i:4;"><input class="input" type="text" placeholder="Full name" required="" name="fullName"></li>
@@ -89,10 +118,9 @@
           <li style="--i:1;"><input class="input" type="text" placeholder="Languages you have experience in?" required="" name="languages"></li>
 
         </ul>
-      </form>
+
     </div>
     <div class="col-5  ">
-      <form class="form" style="align-items: center" action="phpTeachers/teacherSignUpHandle.php" method="post" id="kteachersSignUpForm">
         <ul class="wrapper">
 
           <li style="--i:5;"><input class="input" type="email" placeholder="E-mail" required="" name="email"></li>
@@ -104,10 +132,11 @@
 
           <p id="error-msg" class="error-message" style="display: none;"></p>
         </ul>
-      </form>
-    </div>
-  </div>
 
+    </div>
+
+  </div>
+  </form>
 </div>
 
 
