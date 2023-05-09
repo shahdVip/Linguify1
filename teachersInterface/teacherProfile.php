@@ -53,7 +53,7 @@
     }
     .about-text p mark {
       font-weight: 600;
-      color: #20247b;
+      color: #373b52;
     }
 
     .about-list {
@@ -63,7 +63,7 @@
       padding: 5px 0;
     }
     .about-list label {
-      color: #20247b;
+      color: #373b52;
       font-weight: 600;
       width: 88px;
       margin: 0;
@@ -77,7 +77,7 @@
       right: 11px;
       width: 1px;
       height: 12px;
-      background: #20247b;
+      background: #373b52;
       -moz-transform: rotate(15deg);
       -o-transform: rotate(15deg);
       -ms-transform: rotate(15deg);
@@ -95,6 +95,9 @@
       .about-avatar {
         margin-top: 30px;
       }
+        iframe{
+            height:100vh;
+        }
     }
 
     .about-section .counter {
@@ -109,7 +112,7 @@
     }
     .about-section .counter .count {
       font-weight: 700;
-      color: #20247b;
+      color: #373b52;
       margin: 0 0 5px;
     }
     .about-section .counter p {
@@ -129,7 +132,7 @@
       color: #fc5356;
     }
     .dark-color {
-      color: #20247b;
+      color: #373b52;
     }
 
 
@@ -186,9 +189,6 @@ $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 
           <div class="row about-list">
             <div class="col-md-6">
-
-
-
               <div class="media">
                 <label>name</label>
                 <p>
@@ -284,8 +284,7 @@ Degree
       </div>
       <div class="col-lg-6">
         <div class="about-avatar">
-          <img src="../imgs/logo.png" title="" alt="">
-        </div>
+            <iframe src='https://my.spline.design/avatarcopy-80c4098ab5bd7b65077c7499beea8dd4/' frameborder='0' width='100%' height='100%'></iframe>        </div>
       </div>
     </div>
     <div class="counter">
