@@ -1,3 +1,31 @@
+
+<?php
+
+$db_host = "localhost";
+$db_user = "root";
+$db_pass = "";
+$db_name = "Linguify";
+$conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+
+
+echo'success';
+$teacherId = $_COOKIE["variable"];
+
+// Assuming you have established a database connection
+
+// Query to fetch teacher data from the database based on the submitted ID
+$query = "SELECT * FROM teachers WHERE email = '$teacherId'";
+$result = mysqli_query($conn, $query);
+
+// Fetch the data from the result
+if ($result && mysqli_num_rows($result) > 0) {
+  $teacher = mysqli_fetch_assoc($result);
+  // Use the fetched data as needed
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,35 +94,70 @@
           <div>
               <div class="media">
                   <label>Name:</label>
-                  <p>fgdhtgrfhgtrfdjyhtgr fed
+                  <p>         <?php
+
+
+                    echo $teacher['fullName'];
+
+
+
+                    ?>
                   </p>
               </div>
           </div>
           <div>
               <div class="media">
                   <label>University:</label>
-                  <p>fgdhtgrfhgtrfdjyhtgr fed
+                  <p><?php
+
+
+                    echo $teacher['university'];
+
+
+
+                    ?>
                   </p>
               </div>
           </div>
           <div>
               <div class="media">
                   <label>Degree:</label>
-                  <p>fgdhtgrfhgtrfdjyhtgr fed
+                  <p>        <?php
+
+
+                    echo $teacher['degree'];
+
+
+
+                    ?>
                   </p>
               </div>
           </div>
           <div>
               <div class="media">
                   <label>Languages:</label>
-                  <p>fgdhtgrfhgtrfdjyhtgr fed
+                  <p> <?php
+
+
+                    echo $teacher['languages'];
+
+
+
+                    ?>
                   </p>
               </div>
           </div>
           <div>
               <div class="media">
                   <label>Phone no.:</label>
-                  <p>fgdhtgrfhgtrfdjyhtgrf ed
+                  <p>        <?php
+
+
+                    echo $teacher['phoneNumber'];
+
+
+
+                    ?>
                   </p>
               </div>
           </div>
