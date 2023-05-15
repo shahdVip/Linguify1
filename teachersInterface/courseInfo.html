@@ -1,0 +1,21 @@
+<form method="post">
+  <label for="courseName">Course Name:</label>
+  <input type="text" id="courseName" name="courseName" required>
+
+  <label for="targetedLanguage">Targeted Language (Max 2 words):</label>
+  <input type="text" id="targetedLanguage" name="targetedLanguage" maxlength="15" required>
+
+  <label for="expectedTimeOfFinishing">Expected Time of Finishing (Max 2 numbers):</label>
+  <input type="text" id="expectedTimeOfFinishing" name="expectedTimeOfFinishing" maxlength="2" required pattern="[0-9]*" oninput="validateInput(this)">
+
+  <label for="targetAudience">Target Audience (Max 5 words):</label>
+  <input type="text" id="targetAudience" name="targetAudience" maxlength="35" required>
+
+  <input type="submit" value="Submit">
+</form>
+
+<script>
+  function validateInput(input) {
+    input.value = input.value.replace(/[^0-9]/g, '');
+  }
+</script>

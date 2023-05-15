@@ -23,6 +23,9 @@ if ($result && mysqli_num_rows($result) > 0) {
   // Use the fetched data as needed
 }
 
+
+// Retrieve the picture from the database
+
 ?>
 
 
@@ -87,7 +90,36 @@ if ($result && mysqli_num_rows($result) > 0) {
   <div class="box"></div>
   <div class="box overlay">
       <section class="avatar">
-          <iframe src='https://my.spline.design/avatarcopy-80c4098ab5bd7b65077c7499beea8dd4/' frameborder='0' width='100%' height='100%'></iframe>
+        <br>
+        <br>
+
+
+        <?php
+        $stmt1 = $conn->prepare("SELECT picture FROM pictures WHERE email = ?");
+        $stmt1->bind_param("s", $teacherId);
+        $stmt1->execute();
+        $result1 = $stmt1->get_result();
+
+
+        if ($result1->num_rows > 0) {
+          // Output the picture as a data URL
+          $row = $result1->fetch_assoc();
+          $picture = $row['picture'];
+          echo '<img src="data:image/jpeg;base64,'.base64_encode($picture).'" width="290" height="290">';
+        }
+        else {
+          echo "          <iframe src='https://my.spline.design/avatarcopy-80c4098ab5bd7b65077c7499beea8dd4/' frameborder='0' width='100%' height='100%'></iframe>";
+        }
+        ?>
+
+
+
+
+
+        <form method="post" enctype="multipart/form-data" action="phpTeachers/uploadPic.php">
+          <input type="file" id="picture" name="picture" accept="image/*" required><br><br>
+          <input type="submit" name="submit" value="Upload">
+        </form>
       </section>
       <hr>
       <div class="about-list">
@@ -180,7 +212,25 @@ if ($result && mysqli_num_rows($result) > 0) {
 </div>
 <div class="about">
     <h3 class="dark-color">About Me</h3>
-    <p>description description description description description description description description description description description description description description description description description description description description description </p>
+    <p id="aboutMe" contenteditable="false">
+<?php
+        $stmt1 = $conn->prepare("SELECT description FROM teacherDescription WHERE email = ?");
+      $stmt1->bind_param("s", $teacherId);
+      $stmt1->execute();
+      $result1 = $stmt1->get_result();
+
+
+      if ($result1->num_rows > 0) {
+      // Output the picture as a data URL
+      $row = $result1->fetch_assoc();
+
+      echo $row['description'];
+      }
+    ?>
+
+    </p>
+  <button id="editDescription" onclick="startEditContent()">edit description</button>
+  <button id="saveContentButton" onclick="saveContent()" style="visibility: hidden">save content</button>
 </div>
 <footer class="footer">
     <div class="container" id="footerContainer">
@@ -229,4 +279,42 @@ if ($result && mysqli_num_rows($result) > 0) {
 </footer>
 
 </body>
+<script>
+  function toggleVisibility() {
+    var element = document.getElementById("myElement");
+    if (element.style.visibility === "visible") {
+      element.style.visibility = "hidden";
+    } else {
+      element.style.visibility = "visible";
+    }
+  }
+
+  function startEditContent(){
+
+    document.getElementById('saveContentButton').style.visibility='visible';
+    document.getElementById('editDescription').style.visibility='hidden';
+    document.getElementById('aboutMe').contentEditable='true';
+
+  }
+
+  function saveContent() {
+    // Get the edited content
+    var content = $('#aboutMe').html();
+
+    // Send the data to the server using AJAX
+    $.ajax({
+      type: 'POST',
+      url: 'phpTeachers/setDescription.php',
+      data: { content: content },
+      success: function(response) {
+        alert('Content saved successfully!');
+        location.reload(true);
+      },
+      error: function() {
+        alert('Error saving content!');
+      }
+    });
+  }
+
+</script>
 </html>

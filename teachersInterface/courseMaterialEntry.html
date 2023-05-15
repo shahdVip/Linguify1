@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<form>
+  <label for="fileLabel">File Label (Max 30 characters):</label>
+  <input type="text" id="fileLabel" name="fileLabel" maxlength="30" required>
+
+  <label for="uploadType">Upload Type:</label>
+  <input type="radio" id="videoUpload" name="uploadType" value="video" onclick="toggleUploadFields()">
+  <label for="videoUpload">Videos</label>
+
+  <input type="radio" id="fileUpload" name="uploadType" value="file" onclick="toggleUploadFields()">
+  <label for="fileUpload">File</label>
+
+  <div id="videoLinkField" style="display: none;">
+    <label for="videoLink">Video Link:</label>
+    <input type="text" id="videoLink" name="videoLink">
+  </div>
+
+  <div id="fileUploadField" style="display: none;">
+    <label for="fileUpload">File Upload:</label>
+    <input type="file" id="UploadFile" name="fileUpload">
+  </div>
+
+  <input type="submit" value="Upload">
+</form>
+
+<script>
+  function toggleUploadFields() {
+    var videoLinkField = document.getElementById("videoLinkField");
+    var fileUploadField = document.getElementById("fileUploadField");
+
+    if (document.getElementById("videoUpload").checked) {
+      videoLinkField.style.display = "block";
+      fileUploadField.style.display = "none";
+    } else if (document.getElementById("fileUpload").checked) {
+      videoLinkField.style.display = "none";
+      fileUploadField.style.display = "block";
+    }
+  }
+</script>
+
+
+
+
+</body>
+</html>
