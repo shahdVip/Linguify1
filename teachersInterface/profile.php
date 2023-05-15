@@ -1,3 +1,34 @@
+
+<?php
+
+$db_host = "localhost";
+$db_user = "root";
+$db_pass = "";
+$db_name = "Linguify";
+$conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+
+
+echo'success';
+$teacherId = $_COOKIE["variable"];
+
+// Assuming you have established a database connection
+
+// Query to fetch teacher data from the database based on the submitted ID
+$query = "SELECT * FROM teachers WHERE email = '$teacherId'";
+$result = mysqli_query($conn, $query);
+
+// Fetch the data from the result
+if ($result && mysqli_num_rows($result) > 0) {
+  $teacher = mysqli_fetch_assoc($result);
+  // Use the fetched data as needed
+}
+
+
+// Retrieve the picture from the database
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,42 +90,106 @@
   <div class="box"></div>
   <div class="box overlay">
       <section class="avatar">
-          <iframe src='https://my.spline.design/avatarcopy-80c4098ab5bd7b65077c7499beea8dd4/' frameborder='0' width='100%' height='100%'></iframe>
+        <br>
+        <br>
+
+
+        <?php
+        $stmt1 = $conn->prepare("SELECT picture FROM pictures WHERE email = ?");
+        $stmt1->bind_param("s", $teacherId);
+        $stmt1->execute();
+        $result1 = $stmt1->get_result();
+
+
+        if ($result1->num_rows > 0) {
+          // Output the picture as a data URL
+          $row = $result1->fetch_assoc();
+          $picture = $row['picture'];
+          echo '<img src="data:image/jpeg;base64,'.base64_encode($picture).'" width="290" height="290">';
+        }
+        else {
+          echo "          <iframe src='https://my.spline.design/avatarcopy-80c4098ab5bd7b65077c7499beea8dd4/' frameborder='0' width='100%' height='100%'></iframe>";
+        }
+        ?>
+
+
+
+
+
+        <form method="post" enctype="multipart/form-data" action="phpTeachers/uploadPic.php">
+          <input type="file" id="picture" name="picture" accept="image/*" required><br><br>
+          <input type="submit" name="submit" value="Upload">
+        </form>
       </section>
       <hr>
       <div class="about-list">
           <div>
               <div class="media">
                   <label>Name:</label>
-                  <p>fgdhtgrfhgtrfdjyhtgr fed
+                  <p>         <?php
+
+
+                    echo $teacher['fullName'];
+
+
+
+                    ?>
                   </p>
               </div>
           </div>
           <div>
               <div class="media">
                   <label>University:</label>
-                  <p>fgdhtgrfhgtrfdjyhtgr fed
+                  <p><?php
+
+
+                    echo $teacher['university'];
+
+
+
+                    ?>
                   </p>
               </div>
           </div>
           <div>
               <div class="media">
                   <label>Degree:</label>
-                  <p>fgdhtgrfhgtrfdjyhtgr fed
+                  <p>        <?php
+
+
+                    echo $teacher['degree'];
+
+
+
+                    ?>
                   </p>
               </div>
           </div>
           <div>
               <div class="media">
                   <label>Languages:</label>
-                  <p>fgdhtgrfhgtrfdjyhtgr fed
+                  <p> <?php
+
+
+                    echo $teacher['languages'];
+
+
+
+                    ?>
                   </p>
               </div>
           </div>
           <div>
               <div class="media">
                   <label>Phone no.:</label>
-                  <p>fgdhtgrfhgtrfdjyhtgrf ed
+                  <p>        <?php
+
+
+                    echo $teacher['phoneNumber'];
+
+
+
+                    ?>
                   </p>
               </div>
           </div>
@@ -117,7 +212,25 @@
 </div>
 <div class="about">
     <h3 class="dark-color">About Me</h3>
-    <p>description description description description description description description description description description description description description description description description description description description description description </p>
+    <p id="aboutMe" contenteditable="false">
+<?php
+        $stmt1 = $conn->prepare("SELECT description FROM teacherDescription WHERE email = ?");
+      $stmt1->bind_param("s", $teacherId);
+      $stmt1->execute();
+      $result1 = $stmt1->get_result();
+
+
+      if ($result1->num_rows > 0) {
+      // Output the picture as a data URL
+      $row = $result1->fetch_assoc();
+
+      echo $row['description'];
+      }
+    ?>
+
+    </p>
+  <button id="editDescription" onclick="startEditContent()">edit description</button>
+  <button id="saveContentButton" onclick="saveContent()" style="visibility: hidden">save content</button>
 </div>
 <footer class="footer">
     <div class="container" id="footerContainer">
@@ -166,4 +279,42 @@
 </footer>
 
 </body>
+<script>
+  function toggleVisibility() {
+    var element = document.getElementById("myElement");
+    if (element.style.visibility === "visible") {
+      element.style.visibility = "hidden";
+    } else {
+      element.style.visibility = "visible";
+    }
+  }
+
+  function startEditContent(){
+
+    document.getElementById('saveContentButton').style.visibility='visible';
+    document.getElementById('editDescription').style.visibility='hidden';
+    document.getElementById('aboutMe').contentEditable='true';
+
+  }
+
+  function saveContent() {
+    // Get the edited content
+    var content = $('#aboutMe').html();
+
+    // Send the data to the server using AJAX
+    $.ajax({
+      type: 'POST',
+      url: 'phpTeachers/setDescription.php',
+      data: { content: content },
+      success: function(response) {
+        alert('Content saved successfully!');
+        location.reload(true);
+      },
+      error: function() {
+        alert('Error saving content!');
+      }
+    });
+  }
+
+</script>
 </html>
