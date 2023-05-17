@@ -36,16 +36,17 @@
             // Handle the response
             if (response === 'success teacher') {
               // Successful sign-in, redirect to the desired page
-              window.location.href = 'teachersInterface/teacherProfile.php';
+              window.location.href = 'teachersInterface/profile.php';
             } else {
               // Failed sign-in, display the error message
               $('#error-msg').text(response).show();
             }
           }
         });
-      });
-    });
 
+      });
+
+    });
     function resetForm() {
       document.getElementById("signInForm").reset();
     }
@@ -125,6 +126,33 @@
         $(".nav-item:not(:first-child) .nav-link").removeClass("active");
       }
     });
+
+    function scrollToPercentage(percentage, duration) {
+      const windowHeight = window.innerHeight;
+      const targetPosition = windowHeight * (percentage / 100);
+      const startPosition = window.pageYOffset;
+      const distance = targetPosition - startPosition;
+      const startTime = performance.now();
+
+      function easeInOutQuad(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return (c / 2) * t * t + b;
+        t--;
+        return (-c / 2) * (t * (t - 2) - 1) + b;
+      }
+
+      function scroll() {
+        const currentTime = performance.now();
+        const timeElapsed = currentTime - startTime;
+        window.scrollTo(0, easeInOutQuad(timeElapsed, startPosition, distance, duration));
+
+        if (timeElapsed < duration) {
+          requestAnimationFrame(scroll);
+        }
+      }
+
+      scroll();
+    }
   </script>
 </head>
 <body>
@@ -143,16 +171,16 @@
     <div class="collapse navbar-collapse " id="main">
       <ul class="navbar-nav  mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link p-2 p-lg-3 active mx-4"   aria-current="page" href="#">Home</a>
+          <a class="nav-link p-2 p-lg-3 active mx-4"   aria-current="page" href="#" onclick="scrollToPercentage(0, 1500)">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link p-2 p-lg-3 mx-4"  href="#">Programs</a>
+          <a class="nav-link p-2 p-lg-3 mx-4"  href="#" onclick="scrollToPercentage(75,1500)">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link p-2 p-lg-3 mx-4"  href="#">FAQs</a>
+          <a class="nav-link p-2 p-lg-3 mx-4"  href="#" onclick="scrollToPercentage(160,1500)">Programs and services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link p-2 p-lg-3 mx-4"  href="#">About</a>
+          <a class="nav-link p-2 p-lg-3 mx-4"  href="#" onclick="scrollToPercentage(255,1500)">Contact LINGUIFY</a>
         </li>
 
       </ul>
@@ -169,9 +197,9 @@
     <div class="wrapper">
       <div class="content">
         <h1>Learn a new language! </h1>
-        <p>get started with linguify</p>
+        <p id="homeScroll">get started with linguify</p>
 
-        <a class="btn  rounded-pill main-btn "  style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: 1.7rem; --bs-btn-font-size: 0.9rem;" href="">let's start</a>
+        <a class="btn  rounded-pill main-btn "  style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: 1.7rem; --bs-btn-font-size: 0.9rem;" href="" onclick="scrollToPercentage(0, 1500)">let's start</a>
       </div>
       <iframe src='https://my.spline.design/earthcopy-0b44a61589aa44151132c5eaa63f20d6/' frameborder='0' width='100%' height='100%'></iframe>
 
@@ -206,7 +234,7 @@
                 <div class="animated-button">
 
                   <span class="icon-lock"><i class="fa fa-lock"></i></span>
-                  <span class="next-button password"><i class="fa fa-arrow-up"></i></span>
+                  <span class="next-button password" ><i class="fa fa-arrow-up" ></i> <button onclick=" document.getElementById('signInForm').submit();" style="display: none     "></button></span>
 
 
                 </div>
@@ -293,7 +321,7 @@
 
       <div class="section-title">
         <h2>About</h2>
-        <p>Here at LOYINT, all we care about is loyalty!</p>
+        <p>Here at LINGUIFY, all we care about is knowledge!</p>
       </div>
 
       <div class="row">
@@ -302,9 +330,9 @@
             <h4>Our Mission</h4>
           </div>
           <p class="fst-italic text-center">
-            Satisfy customer needs using LOYINT app that connects customers with different sectors
-            that provide different services and products. So it increases the loyalty for our customers and therfore
-            more profits, and increase financial movements through supporting for all projects, and especially for small startups.
+            Satisfy student needs using LINGUIFY that connects students with different teachers
+            that provide different styles and cultures. So it expands the knowledge spectrum of our students and therefore
+            possibly more information about other regions, thus increasing knowledge gathered from various instructors each with his/her own field of expertise.
           </p>
         </div>
         <div class="col-lg-6 pt-4 pt-lg-0 content">
@@ -312,7 +340,7 @@
             <h4>Our Vision</h4>
           </div>
           <p class="fst-italic text-center">
-            Increase clients loyalty for our customers and increase commercial traffic.
+            Connecting students with diverse teachers, expanding knowledge horizons.
           </p>
 
         </div>
@@ -320,7 +348,12 @@
       </div>
     </div>
   </section>
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
   <!-- ======= Facts Section ======= -->
   <!-- ======= Services Section ======= -->
   <section id="services" class="services">
@@ -328,7 +361,7 @@
 
       <div class="section-title">
         <h2>Products & Exclusives</h2>
-        <p>LOYINT specializes in creating products and services that meet the needs of an environment full of modern competitive businesses.</p>
+        <p>Linguify specializes in creating environments and communities that meet the needs of a world full of modern competitive individuals.</p>
       </div>
 
       <div class="row">
@@ -342,7 +375,7 @@
               <i class="bx bx-group"></i>
             </div>
             <h4><a href="">Family</a></h4>
-            <p>Establish contact to all necessary parties through constant feedback and friendly interfaces in-app that encourages them the chance to contribute to the well-being of the app.</p>
+            <p>Establish contact to all necessary parties through constant feedback and friendly interfaces in-website that encourages them the chance to contribute to the well-being of the site.</p>
           </div>
         </div>
 
@@ -381,7 +414,7 @@
               <i class="bx bx-meteor"></i>
             </div>
             <h4><a href="">Quality</a></h4>
-            <p>Ensure great quality service for both customers and clients through our LOYINT app.</p>
+            <p>Ensure great quality service for both teachers and student through LINGUIFY site.</p>
           </div>
         </div>
 
@@ -405,6 +438,61 @@
 
 
 
+<section id="contact" class="contact">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>Contact Us</h2>
+    </div>
+
+    <div class="row mt-1">
+
+      <div class="col-lg-4">
+        <div class="info">
+          <div class="address">
+            <i class="bi bi-geo-alt"></i>
+            <h4>Location:</h4>
+            <p>An-Najah National University, Nablus, Palestine</p>
+          </div>
+
+          <div class="email">
+            <i class="bi bi-envelope"></i>
+            <h4>Email:</h4>
+            <p>contact@Linguify.com</p>
+          </div>
+
+
+        </div>
+
+      </div>
+
+      <div class="col-lg-8 mt-5 mt-lg-0">
+
+        <form action="default.php" method="post" role="form">
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+              <input type="email" class="form-control" name="email" id="email2" placeholder="Your Email" required>
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+          </div>
+          <div class="form-group mt-3">
+            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+          </div>
+
+          <div class="text-center pt-3"><button type="submit" class="sub">Send Message</button></div>
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+</section><!-- End Contact Section -->
 
 
 

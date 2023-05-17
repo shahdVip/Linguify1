@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Picture Upload Form</title>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data" action="phpTeachers/uploadPic.php">
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required><br><br>
+  <label for="picture">Select Picture:</label>
+  <input type="file" id="picture" name="picture" accept="image/*" required><br><br>
+  <input type="submit" name="submit" value="Upload">
+</form>
+</body>
+</html>
