@@ -318,7 +318,7 @@
     <div class="modal-dialog modal-dialog-centered ">
         <div class="modal-content ">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">New Course</h1>
+                <h1 class="modal-title fs-5" id="CourseBackdropLabel">New Course</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body ">
@@ -347,11 +347,85 @@
                 </form>
             </div>
             <div class="modal-footer justify-content-center">
-                <button class="fancy" href="#">
+                <button class="fancy" href="#" data-bs-target="#ModalToggle2" data-bs-toggle="modal">
                     <span class="top-key"></span>
                     <span class="text">submit</span>
                     <span class="bottom-key-1"></span>
                     <span class="bottom-key-2"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="ModalToggle2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg w-75 align-items-center justify-content-center">
+        <div class="modal-content w-75">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel1">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body1 ">
+                <label>
+                    <input required="" placeholder="" type="Cname" class="input">
+                    <span>File label</span>
+                </label>
+                <div class="radio-inputs">
+                    <label>
+                        <input class="radio-input" type="radio" name="uploadType">
+                        <span class="radio-tile">
+					<span class="radio-icon">
+                        <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                        <lord-icon
+                                src="https://cdn.lordicon.com/xhitaejr.json"
+                                trigger="hover"
+                                colors="outline:#131432,primary:#3a3347,secondary:#4fbaf4,secondary 2:#ebe6ef"
+                                style="width:150px;height:150px">
+                        </lord-icon>
+                    </span>
+					<span class="radio-label">Video</span>
+				</span>
+                    </label>
+                    <label>
+                        <input checked="" class="radio-input" type="radio" name="uploadType">
+                        <span class="radio-tile">
+				<span class="radio-icon">
+                    <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                    <lord-icon
+                            src="https://cdn.lordicon.com/nocovwne.json"
+                            trigger="hover"
+                            colors="primary:#121331,secondary:#4fbaf4"
+                            state="hover-2"
+                            style="width:150px;height:150px">
+                    </lord-icon>
+				</span>
+				<span class="radio-label">Documents</span>
+			</span>
+                    </label>
+
+                </div>
+                <label>
+                    <input required="" placeholder="" type="Cname" class="input">
+                    <span>Video link</span>
+                </label>
+                <div class="wrapper1" id="fileUploadField">
+                    <header>Upload Course Files Here!</header>
+                    <form action="#">
+                        <input class="file-input" type="file" name="file" hidden>
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Browse File to Upload</p>
+                    </form>
+                    <section class="progress-area"></section>
+                    <section class="uploaded-area"></section>
+                </div>
+
+
+            </div>
+            <div class="modal-footer justify-content-center align-items-center">
+                <button class="fancy1" href="#">
+                    <span class="top-key1"></span>
+                    <span class="text1">Upload</span>
+                    <span class="bottom-key-11"></span>
+                    <span class="bottom-key-21"></span>
                 </button>
             </div>
         </div>
