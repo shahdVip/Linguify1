@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course material</title>
+    <link rel="stylesheet" href="css/CMUs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Launch static backdrop modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg w-75 align-items-center justify-content-center">
+        <div class="modal-content w-75">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body ">
+                <div class="wave-group1" id="fileLabel">
+                    <input required="" type="text" class="input">
+                    <span class="bar"></span>
+                    <label class="label">
+                        <span class="label-char" style="--index: 0">F</span>
+                        <span class="label-char" style="--index: 1">i</span>
+                        <span class="label-char" style="--index: 2">l</span>
+                        <span class="label-char" style="--index: 3">e</span>
+                        <span class="label-char" style="--index: 4">&nbsp</span>
+                        <span class="label-char" style="--index: 5">l</span>
+                        <span class="label-char" style="--index: 6">a</span>
+                        <span class="label-char" style="--index: 7">b</span>
+                        <span class="label-char" style="--index: 8">e</span>
+                        <span class="label-char" style="--index: 9">l</span>
+
+                    </label>
+                </div>
+                <div class="radio-inputs">
+                    <label>
+                        <input class="radio-input" type="radio" name="uploadType">
+                        <span class="radio-tile">
+					<span class="radio-icon">
+                        <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                        <lord-icon
+                                src="https://cdn.lordicon.com/xhitaejr.json"
+                                trigger="hover"
+                                colors="outline:#131432,primary:#3a3347,secondary:#4fbaf4,secondary 2:#ebe6ef"
+                                style="width:150px;height:150px">
+                        </lord-icon>
+                    </span>
+					<span class="radio-label">Video</span>
+				</span>
+                    </label>
+                    <label>
+                        <input checked="" class="radio-input" type="radio" name="uploadType">
+                        <span class="radio-tile">
+				<span class="radio-icon">
+                    <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                    <lord-icon
+                            src="https://cdn.lordicon.com/nocovwne.json"
+                            trigger="hover"
+                            colors="primary:#121331,secondary:#4fbaf4"
+                            state="hover-2"
+                            style="width:150px;height:150px">
+                    </lord-icon>
+				</span>
+				<span class="radio-label">Documents</span>
+			</span>
+                    </label>
+
+                </div>
+                <div class="wave-group" id="videoLinkField">
+                    <input required="" type="text" class="input">
+                    <span class="bar"></span>
+                    <label class="label">
+                        <span class="label-char" style="--index: 0">L</span>
+                        <span class="label-char" style="--index: 1">i</span>
+                        <span class="label-char" style="--index: 2">n</span>
+                        <span class="label-char" style="--index: 3">k</span>
+                    </label>
+                </div>
+                <div class="wrapper" id="fileUploadField">
+                    <header>Upload Course Files Here!</header>
+                    <form action="#">
+                        <input class="file-input" type="file" name="file" hidden>
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Browse File to Upload</p>
+                    </form>
+                    <section class="progress-area"></section>
+                    <section class="uploaded-area"></section>
+                </div>
+
+
+            </div>
+            <div class="modal-footer justify-content-center align-items-center">
+                <a class="btn ms-2 rounded-pill up-btn "   style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: 1.7rem; --bs-btn-font-size: 1.2rem;" href="">Upload</a>
+
+                <!--<button type="button" class="btn btn-primary">Understood</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="Fscript.js"></script>
+</body>
+</html>
