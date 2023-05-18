@@ -53,37 +53,35 @@ if ($result && mysqli_num_rows($result) > 0) {
 <div class="container "id="home">
 
 </div>
-<nav class="navbar fixed-top navbar-expand-lg  ">
-    <div class="container ">
-        <a class="navbar-brand " href="#">
-            <img src="../imgs/logo.png" alt="">
-            <span>Linguify</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main" aria-controls="main" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fa-solid fa-bars" style="color: #373b52;"></i>
-        </button>
-        <div class="collapse navbar-collapse " id="main">
-            <ul class="navbar-nav  mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link p-2 p-lg-3 active mx-4"   aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link p-2 p-lg-3 mx-4"  href="#">Programs</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link p-2 p-lg-3 mx-4"  href="#">FAQs</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link p-2 p-lg-3 mx-4"  href="#">About</a>
-                </li>
+<nav class="navbar fixed-top navbar-expand-lg ">
+  <div class="container">
+    <a class="navbar-brand " href="#">
+      <img src="imgs/logo.png" alt="">
+      <span>Linguify</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main" aria-controls="main" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa-solid fa-bars" style="color: #373b52;"></i>
+    </button>
+    <div class="collapse navbar-collapse position-relative justify-content-center align-items-center " id="main">
+      <ul class="navbar-nav  mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link p-4 p-lg-3 active mx-5"   href="#">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link p-4 p-lg-3 mx-5"  href="#">Courses</a>
+        </li>
 
-            </ul>
-            <div class="search ps-3 pe-3 d-none d-lg-block ms-2">
-                <i class="fa-solid fa-magnifying-glass" style="color: #4FBAF4 ;"></i>
-            </div>
+        <li class="nav-item">
+          <a class="nav-link p-4 p-lg-3 mx-5"   aria-current="page" href="#">Home</a>
+        </li>
 
-        </div>
+      </ul>
+
+      <a class="btn  rounded-pill main-btn " id="mymodal" data-bs-toggle="modal" data-bs-target="#staticBackdrop"  style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: 1.7rem; --bs-btn-font-size: 0.9rem;" href="" onclick=" window.location.href = '../mainPageUsignned.html';">Log out</a>
+
+
     </div>
+  </div>
 </nav>
 
 <div class="container "id="profileC">

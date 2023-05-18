@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53ac28f2-83f3-414a-9cd8-56b711191e13" name="Changes" comment="added all files" />
+    <list default="true" id="53ac28f2-83f3-414a-9cd8-56b711191e13" name="Changes" comment="added all files">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MMSs.html" beforeDir="false" afterPath="$PROJECT_DIR$/MMSs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teachersInterface/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/teachersInterface/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teachersInterface/teacherProfile.php" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +25,9 @@
         <option value="CSS File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="origin/aker" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
