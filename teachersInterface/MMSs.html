@@ -26,9 +26,71 @@
     <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 </head>
+<script>
+  $(window).scroll(function() {
+    var scrollPercentage = ($(window).scrollTop() / ($(document).height() - $(window).height())) * 100;
 
+    if (scrollPercentage >= 25 && scrollPercentage < 50) {
+      $(".nav-item:nth-child(2) .nav-link").addClass("active");
+      $(".nav-item:not(:nth-child(2)) .nav-link").removeClass("active");
+    } else if (scrollPercentage >= 50 && scrollPercentage < 75) {
+      $(".nav-item:nth-child(3) .nav-link").addClass("active");
+      $(".nav-item:not(:nth-child(3)) .nav-link").removeClass("active");
+    } else if (scrollPercentage >= 75) {
+      $(".nav-item:nth-child(4) .nav-link").addClass("active");
+      $(".nav-item:not(:nth-child(4)) .nav-link").removeClass("active");
+    } else {
+      $(".nav-item:first-child .nav-link").addClass("active");
+      $(".nav-item:not(:first-child) .nav-link").removeClass("active");
+    }
+  });
+
+  function scrollToPercentage(percentage, duration) {
+    const windowHeight = window.innerHeight;
+    const targetPosition = windowHeight * (percentage / 100);
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    const startTime = performance.now();
+
+    function easeInOutQuad(t, b, c, d) {
+      t /= d / 2;
+      if (t < 1) return (c / 2) * t * t + b;
+      t--;
+      return (-c / 2) * (t * (t - 2) - 1) + b;
+    }
+
+    function scroll() {
+      const currentTime = performance.now();
+      const timeElapsed = currentTime - startTime;
+      window.scrollTo(0, easeInOutQuad(timeElapsed, startPosition, distance, duration));
+
+      if (timeElapsed < duration) {
+        requestAnimationFrame(scroll);
+      }
+    }
+
+    scroll();
+  }
+
+
+  $(window).scroll(function() {
+    var scrollPosition = $(window).scrollTop();
+    var windowHeight = $(window).height();
+
+    // Calculate the position at which the switch should occur (50% of the page height)
+    var switchPosition = windowHeight * 0.5;
+
+    if (scrollPosition >= switchPosition) {
+      $(".nav-item:nth-child(2) .nav-link").removeClass("active");
+      $(".nav-item:nth-child(3) .nav-link").addClass("active");
+    } else {
+      $(".nav-item:nth-child(2) .nav-link").addClass("active");
+      $(".nav-item:nth-child(3) .nav-link").removeClass("active");
+    }
+  });
+</script>
 <body>
-<nav class="navbar fixed-top navbar-expand-lg ">
+<nav  class="navbar fixed-top navbar-expand-lg ">
     <div class="container">
         <a class="navbar-brand " href="#">
             <img src="../imgs/logo.png" alt="">
@@ -43,18 +105,18 @@
                     <a class="nav-link p-4 p-lg-3 active mx-5"   aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link p-4 p-lg-3 mx-5"  href="#">Courses</a>
+                    <a class="nav-link p-4 p-lg-3 mx-5"  href="#" onclick="scrollToPercentage(85,1200)">Courses</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link p-4 p-lg-3 mx-5"  href="#">Profile</a>
+                    <a class="nav-link p-4 p-lg-3 mx-5"  href="#" onclick="window.location.href='profile.php';">Profile</a>
                 </li>
 
             </ul>
 
-            <div class="search ps-3 pe-3 d-none d-lg-block ms-2">
-                <i class="fa-solid fa-magnifying-glass" style="color: #4FBAF4 ;"></i>
-            </div>
+          <a class="btn  rounded-pill main-btn " id="mymodal" data-bs-toggle="modal" data-bs-target="#staticBackdrop"  style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: 1.7rem; --bs-btn-font-size: 0.9rem;" href="" onclick=" window.location.href = 'mainPageUsignned.html';">Log out</a>
+
+
 
         </div>
     </div>
@@ -69,14 +131,14 @@
                 <div class="buttons">
                     <!--<a class="btn  rounded-pill main-btn "  style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: 1.7rem; --bs-btn-font-size: 0.9rem;" href="">View Courses</a>
                     <a class="btn  rounded-pill main-btn "  style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: 1.7rem; --bs-btn-font-size: 0.9rem;" href="">Open Profile</a>-->
-                    <button class="Cbutton align-items-center justify-content-center">
+                    <button class="Cbutton align-items-center justify-content-center" onclick="scrollToPercentage(85,1200)">
                         <span>View Courses</span>
                         <svg width="34" height="34" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="37" cy="37" r="35.5" stroke="white" stroke-width="3"></circle>
                             <path d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z" fill="white"></path>
                         </svg>
                     </button>
-                    <button class="Cbutton2 align-items-center justify-content-center">
+                    <button class="Cbutton2 align-items-center justify-content-center" onclick=" window.location.href = 'profile.php';">
                         <span>Go to Profile</span>
                         <svg width="34" height="34" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="37" cy="37" r="35.5" stroke="whitesmoke" stroke-width="3"></circle>
@@ -101,7 +163,7 @@
 
         </div>
         <section class="slider">
-            <div class="card "style="border-radius: 2rem;">
+            <div class="card " style="border-radius: 2rem;">
                 <div class="card-content">
                     <img src="../imgs/Cthumbnail.png" alt="" class="card-img">
                     <h1 class="card-title">Complete Spanish Course</h1>
@@ -167,7 +229,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card "style="border-radius: 2rem;">
+            <div class="card " style="border-radius: 2rem;">
                 <div class="card-content">
                     <img src="../imgs/c6.png" alt="" class="card-img">
                     <h1 class="card-title">Complete French Course</h1>
@@ -189,7 +251,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card "style="border-radius: 2rem;">
+            <div class="card " style="border-radius: 2rem;">
                 <div class="card-content">
                     <img src="../imgs/c3.png" alt="" class="card-img">
                     <h1 class="card-title">Learn English from 0</h1>
@@ -211,7 +273,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card "style="border-radius: 2rem;">
+            <div class="card " style="border-radius: 2rem;">
                 <div class="card-content">
                     <img src="../imgs/c2.png" alt="" class="card-img">
                     <h1 class="card-title">Italian Language Course</h1>
@@ -221,7 +283,7 @@
                             <span class="rating-value">4.5</span>
 
                         </div>
-                        <i class="fa-solid fa-stopwatch" style="color: #373b52;"></i>
+                        <i class="fa-solid fa-stopwatch"  style="color: #373b52;"></i>
                         <p class="card-price">3hr 33min</p>
                     </div>
                     <div class="card-footer p-0 bg-transparent border-0">
@@ -236,7 +298,7 @@
 
 
         </section>
-        <section class="addButton" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <section class="addButton" data-bs-toggle="modal" data-bs-target="#CourseBackdrop">
             <button class="cta">
                 <span>Add a Course</span>
                 <svg viewBox="0 0 13 10" height="10px" width="15px">
@@ -252,6 +314,49 @@
 
     <!--</div>-->
 </section>
+<div class="modal fade" id="CourseBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="CourseBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered ">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">New Course</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body ">
+                <form class="form">
+
+                    <label>
+                        <input required="" placeholder="" type="Cname" class="input">
+                        <span>Course name </span>
+                    </label>
+
+                    <label>
+                        <input required="" placeholder="" type="Clanguage" class="input">
+                        <span>Targeted language (2 words)</span>
+                    </label>
+
+                    <label>
+                        <input required="" type="duration" placeholder="" class="input">
+                        <span>Course duration(2 numbers)</span>
+                    </label>
+                    <label>
+                        <textarea required="" rows="3" placeholder="" class="input01"></textarea>
+                        <span>Targeted audience (5 words)</span>
+                    </label>
+
+
+                </form>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button class="fancy" href="#">
+                    <span class="top-key"></span>
+                    <span class="text">submit</span>
+                    <span class="bottom-key-1"></span>
+                    <span class="bottom-key-2"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!--<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg w-75">
