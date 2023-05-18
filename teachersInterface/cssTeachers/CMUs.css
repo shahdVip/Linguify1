@@ -6,85 +6,49 @@ body{
     align-content: center;
 
 }
-.wave-group1  {
-    top:-50px;
+ label {
     position: relative;
 }
-
-.wave-group1 .input {
-    font-size: 16px;
-    padding: 10px 10px 10px 5px;
-    display: block;
-    width: 200px;
-    border: none;
-    border-bottom: 1px solid lightgray;
-    background: transparent;
+ label .input:focus ,label .input01:focus{
+    border-color:#4FBAF4;
+    border-width:2px;
+}
+ label .input {
+    width: 430px;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 5px;
 }
 
-.wave-group1 .input:focus {
-    outline: none;
-}
-
-.wave-group1 .label {
-    color: #999;
-    font-size: 18px;
-    font-weight: normal;
+ label .input + span {
     position: absolute;
-    pointer-events: none;
-    left: 5px;
-    top: 10px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 1.1em;
+    cursor: text;
+    transition: 0.3s ease;
 }
 
-.wave-group1 .label-char {
-    -webkit-transition: 0.2s ease all;
-    transition: 0.2s ease all;
-    -webkit-transition-delay: calc(var(--index) * .05s);
-    transition-delay: calc(var(--index) * .05s);
+ label .input:placeholder-shown + span {
+    top: 15px;
+    font-size: 1.1em;
+}
+
+label .input:focus + span, label .input:valid + span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+    color:#4FBAF4;
 
 }
 
-.wave-group1 .input:focus ~ label .label-char,
-.wave-group1 .input:valid ~ label .label-char {
-    -webkit-transform: translateY(-20px);
-    -ms-transform: translateY(-20px);
-    transform: translateY(-20px);
-    font-size: 16px;
-    color: #4FBAF4;
+ label .input:valid + span {
+    color: green;
 }
 
-.wave-group1 .bar {
-    position: relative;
-    display: block;
-    width: 200px;
-}
 
-.wave-group1 .bar:before,.wave-group1 .bar:after {
-    content: '';
-    height: 2px;
-    width: 0px;
-    bottom: 0px;
-    position: absolute;
-    background: #4FBAF4;
-    transition: 0.2s ease all;
-    -moz-transition: 0.2s ease all;
-    -webkit-transition: 0.2s ease all;
-}
-
-.wave-group1 .bar:before {
-    left: 50%;
-}
-
-.wave-group1 .bar:after {
-    right: 50%;
-}
-
-.wave-group1 .input:focus ~ .bar:before,
-.wave-group1 .input:focus ~ .bar:after {
-    width: 200px;
-}
 /*radio*/
 .radio-inputs {
     display: flex;
@@ -198,85 +162,7 @@ body{
     width: 1px;
 }
 /*end*/
-/*vl*/
-.wave-group  {
-    position: relative;
-}
 
-.wave-group .input {
-    font-size: 16px;
-    padding: 10px 10px 10px 5px;
-    display: block;
-    width: 200px;
-    border: none;
-    border-bottom: 1px solid lightgray;
-    background: transparent;
-}
-
-.wave-group .input:focus {
-    outline: none;
-}
-
-.wave-group .label {
-    color: #999;
-    font-size: 18px;
-    font-weight: normal;
-    position: absolute;
-    pointer-events: none;
-    left: 5px;
-    top: 10px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-}
-
-.wave-group .label-char {
-    -webkit-transition: 0.2s ease all;
-    transition: 0.2s ease all;
-    -webkit-transition-delay: calc(var(--index) * .05s);
-    transition-delay: calc(var(--index) * .05s);
-
-}
-
-.wave-group .input:focus ~ label .label-char,
-.wave-group .input:valid ~ label .label-char {
-    -webkit-transform: translateY(-20px);
-    -ms-transform: translateY(-20px);
-    transform: translateY(-20px);
-    font-size: 16px;
-    color: #4FBAF4;
-}
-
-.wave-group .bar {
-    position: relative;
-    display: block;
-    width: 200px;
-}
-
-.wave-group .bar:before,.wave-group .bar:after {
-    content: '';
-    height: 2px;
-    width: 0px;
-    bottom: 0px;
-    position: absolute;
-    background: #4FBAF4;
-    transition: 0.2s ease all;
-    -moz-transition: 0.2s ease all;
-    -webkit-transition: 0.2s ease all;
-}
-
-.wave-group .bar:before {
-    left: 50%;
-}
-
-.wave-group .bar:after {
-    right: 50%;
-}
-
-.wave-group .input:focus ~ .bar:before,
-.wave-group .input:focus ~ .bar:after {
-    width: 200px;
-}
 
 /*end vl*/
 /*upload*/
@@ -404,7 +290,7 @@ section .details span{
     font-size: 16px;
 }
 /*end upload*/
-.modal-footer .up-btn {
+/*.modal-footer .up-btn {
     background-color: transparent;
     border: 2px solid #4FBAF4;
     font-weight: bold;
@@ -417,4 +303,117 @@ section .details span{
 {
     background-color: #4FBAF4;
     color: whitesmoke;
+}*/
+
+.fancy1 {
+    width:90%;
+    background-color: transparent;
+    border: 2px solid #cacaca;
+    border-radius: 0px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 390;
+    letter-spacing: 2px;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 8px 30px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    transition: all 0.3s ease-in-out;
+    user-select: none;
+    font-size: 18px;
+
+}
+
+.fancy1::before {
+    content: " ";
+    width: 1.7rem;
+    height: 2px;
+    background: #cacaca;
+    top: 50%;
+    left: 1.5em;
+    position: absolute;
+    transform: translateY(-50%);
+    transform: translateX(230%);
+    transform-origin: center;
+    transition: background 0.3s linear, width 0.3s linear;
+}
+
+
+.fancy1 .text1 {
+    font-size: 1.125em;
+    line-height: 1.33333em;
+    padding-left: 2em;
+    display: block;
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+    text-transform: lowercase;
+    text-decoration: none;
+    color: #818181;
+    transform: translateX(30%);
+}
+
+.fancy1 .top-key1{
+    height: 2px;
+    width: 1.5625rem;
+    top: -2px;
+    left: 0.625rem;
+    position: absolute;
+    background: white;
+    transition: width 0.5s ease-out, left 0.3s ease-out;
+}
+
+.fancy1 .bottom-key-11 {
+    height: 2px;
+    width: 1.5625rem;
+    right: 1.875rem;
+    bottom: -2px;
+    position: absolute;
+    background: white;
+    transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy1 .bottom-key-21 {
+    height: 2px;
+    width: 0.625rem;
+    right: 0.625rem;
+    bottom: -2px;
+    position: absolute;
+    background: white;
+    transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy1:hover {
+    color: white;
+    background: #4FBAF4;
+    border-color: whitesmoke;
+
+}
+
+.fancy1:hover::before {
+    width: 1.5rem;
+    background: white;
+}
+
+.fancy1:hover .text1 {
+    color: white;
+    padding-left: 1.5em;
+}
+
+.fancy1:hover .top-key1 {
+    left: -2px;
+    width: 0px;
+    background: white;
+}
+
+.fancy1:hover .bottom-key-11,
+.fancy1:hover .bottom-key-21 {
+    right: 0;
+    width: 0;
+    background: #fff;
 }
