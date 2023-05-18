@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Course material</title>
-    <link rel="stylesheet" href="css/CMUs.css">
+    <link rel="stylesheet" href="cssTeachers/CMUs.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </head>
 <body>
@@ -29,23 +29,10 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body ">
-                <div class="wave-group1" id="fileLabel">
-                    <input required="" type="text" class="input">
-                    <span class="bar"></span>
-                    <label class="label">
-                        <span class="label-char" style="--index: 0">F</span>
-                        <span class="label-char" style="--index: 1">i</span>
-                        <span class="label-char" style="--index: 2">l</span>
-                        <span class="label-char" style="--index: 3">e</span>
-                        <span class="label-char" style="--index: 4">&nbsp</span>
-                        <span class="label-char" style="--index: 5">l</span>
-                        <span class="label-char" style="--index: 6">a</span>
-                        <span class="label-char" style="--index: 7">b</span>
-                        <span class="label-char" style="--index: 8">e</span>
-                        <span class="label-char" style="--index: 9">l</span>
-
-                    </label>
-                </div>
+                <label>
+                    <input required="" placeholder="" type="Cname" class="input">
+                    <span>File label</span>
+                </label>
                 <div class="radio-inputs">
                     <label>
                         <input class="radio-input" type="radio" name="uploadType">
@@ -80,16 +67,10 @@
                     </label>
 
                 </div>
-                <div class="wave-group" id="videoLinkField">
-                    <input required="" type="text" class="input">
-                    <span class="bar"></span>
-                    <label class="label">
-                        <span class="label-char" style="--index: 0">L</span>
-                        <span class="label-char" style="--index: 1">i</span>
-                        <span class="label-char" style="--index: 2">n</span>
-                        <span class="label-char" style="--index: 3">k</span>
-                    </label>
-                </div>
+                <label>
+                    <input required="" placeholder="" type="Cname" class="input">
+                    <span>Video link</span>
+                </label>
                 <div class="wrapper" id="fileUploadField">
                     <header>Upload Course Files Here!</header>
                     <form action="#">
@@ -104,9 +85,12 @@
 
             </div>
             <div class="modal-footer justify-content-center align-items-center">
-                <a class="btn ms-2 rounded-pill up-btn "   style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: 1.7rem; --bs-btn-font-size: 1.2rem;" href="">Upload</a>
-
-                <!--<button type="button" class="btn btn-primary">Understood</button>-->
+                <button class="fancy1" href="#">
+                    <span class="top-key1"></span>
+                    <span class="text1">Upload</span>
+                    <span class="bottom-key-11"></span>
+                    <span class="bottom-key-21"></span>
+                </button>
             </div>
         </div>
     </div>
