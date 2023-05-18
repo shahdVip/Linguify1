@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53ac28f2-83f3-414a-9cd8-56b711191e13" name="Changes" comment="added all files">
-      <change beforePath="$PROJECT_DIR$/MMSs.html" beforeDir="false" afterPath="$PROJECT_DIR$/MMSs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/MMSs.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/MMSs.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainPageUsignned.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainPageUsignned.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMU.html" beforeDir="false" afterPath="$PROJECT_DIR$/teachersInterface/CMU.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MMSs.html" beforeDir="false" afterPath="$PROJECT_DIR$/teachersInterface/MMSs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/CMUs.css" beforeDir="false" afterPath="$PROJECT_DIR$/teachersInterface/cssTeachers/CMUs.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/MMSs.css" beforeDir="false" afterPath="$PROJECT_DIR$/teachersInterface/cssTeachers/MMSs.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Fscript.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Fscript.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/upload.php" beforeDir="false" afterPath="$PROJECT_DIR$/teachersInterface/phpTeachers/upload.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/teachersInterface/courseMaterialEntry.html" beforeDir="false" afterPath="$PROJECT_DIR$/teachersInterface/courseMaterialEntry.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +39,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/MMSs.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/teachersInterface/MMSs.html" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -58,7 +61,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Lenovo/PhpstormProjects/untitled",
+    "last_opened_file_path": "C:/xampp/htdocs/Linguify1/teachersInterface/phpTeachers",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -68,6 +71,13 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Linguify1\teachersInterface\phpTeachers" />
+      <recent name="C:\xampp\htdocs\Linguify1\teachersInterface\cssTeachers" />
+      <recent name="C:\xampp\htdocs\Linguify1\teachersInterface" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -114,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684328032507</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added all files">
+      <created>1684415822971</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684415822971</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
