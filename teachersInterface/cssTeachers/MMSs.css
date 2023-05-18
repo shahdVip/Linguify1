@@ -871,3 +871,423 @@ image{
         width: 100%;
     }
 }
+
+/*body{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    justify-content: center;
+    align-content: center;
+
+}*/
+.modal-body1 label {
+    position: relative;
+}
+.modal-body1 label .input:focus ,label .input01:focus{
+    border-color:#4FBAF4;
+    border-width:2px;
+}
+.modal-body1 label .input {
+    width: 430px;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 5px;
+}
+
+.modal-body1 label .input + span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 1.1em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+.modal-body1 label .input:placeholder-shown + span {
+    top: 15px;
+    font-size: 1.1em;
+}
+
+.modal-body1  label .input:focus + span, label .input:valid + span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+    color:#4FBAF4;
+
+}
+
+.modal-body1  label .input:valid + span {
+    color: green;
+}
+
+
+/*radio*/
+.modal-body1 .radio-inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*max-width: 350px;*/
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.modal-body1 .radio-inputs > * {
+    margin: 10px;
+}
+
+.modal-body1 .radio-input:checked + .radio-tile {
+    border-color: #4FBAF4;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    color: #4FBAF4;
+}
+
+.modal-body1 .radio-input:checked + .radio-tile:before {
+    transform: scale(1);
+    opacity: 1;
+    background-color: #4FBAF4;
+    border-color: #4FBAF4;
+}
+
+.modal-body1 .radio-input:checked + .radio-tile .radio-icon svg {
+    fill: #4FBAF4;
+}
+
+.modal-body1 .radio-input:checked + .radio-tile .radio-label {
+    color: #4FBAF4;
+}
+
+.modal-body1 .radio-input:focus + .radio-tile {
+    border-color: #4FBAF4;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 4px #b5c9fc;
+}
+
+.radio-input:focus + .radio-tile:before {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.radio-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*width: 80px;*/
+    min-height: 80px;
+    border-radius: 0.5rem;
+    border: 2px solid #b5bfd9;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.15s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.radio-tile:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0.75rem;
+    height: 0.75rem;
+    border: 2px solid #b5bfd9;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 0.25rem;
+    left: 0.25rem;
+    opacity: 0;
+    transform: scale(0);
+    transition: 0.25s ease;
+}
+
+.radio-tile:hover {
+    border-color: #4FBAF4;
+}
+
+.radio-tile:hover:before {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.radio-icon svg {
+    width: 2rem;
+    height: 2rem;
+    fill: #494949;
+}
+
+.radio-label {
+    color: #707070;
+    transition: 0.375s ease;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 7px;
+}
+
+.radio-input {
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+/*end*/
+
+
+/*end vl*/
+/*upload*/
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+/**{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}*/
+.modal-body1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    gap:10px;
+    /*background: #4FBAF4;*/
+}
+
+::selection{
+    color: #fff;
+    background: #4FBAF4;
+}
+.wrapper1{
+    width: 430px;
+    background: #fff;
+    border-radius: 5px;
+    padding: 30px;
+    box-shadow: 7px 7px 12px rgba(0,0,0,0.05);
+}
+.wrapper1 header{
+    color: #4FBAF4;
+    font-size: 27px;
+    font-weight: 600;
+    text-align: center;
+}
+.wrapper1 form{
+    height: 167px;
+    display: flex;
+    cursor: pointer;
+    margin: 30px 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 2px dashed #4FBAF4;
+}
+form :where(i, p){
+    color: #4FBAF4;
+}
+form i{
+    font-size: 50px;
+}
+form p{
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+section .row{
+    margin-bottom: 10px;
+    background: #E9F0FF;
+    list-style: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+section .row i{
+    color: #4FBAF4;
+    font-size: 30px;
+}
+section .details span{
+    font-size: 14px;
+}
+.progress-area .row .content{
+    width: 100%;
+    margin-left: 15px;
+}
+.progress-area .details{
+    display: flex;
+    align-items: center;
+    margin-bottom: 7px;
+    justify-content: space-between;
+}
+.progress-area .content .progress-bar{
+    height: 6px;
+    width: 100%;
+    margin-bottom: 4px;
+    background: #fff;
+    border-radius: 30px;
+}
+.content .progress-bar .progress{
+    height: 100%;
+    width: 0%;
+    background: #4FBAF4;
+    border-radius: inherit;
+}
+.uploaded-area{
+    max-height: 232px;
+    overflow-y: scroll;
+}
+.uploaded-area.onprogress{
+    max-height: 150px;
+}
+.uploaded-area::-webkit-scrollbar{
+    width: 0px;
+}
+.uploaded-area .row .content{
+    display: flex;
+    align-items: center;
+}
+.uploaded-area .row .details{
+    display: flex;
+    margin-left: 15px;
+    flex-direction: column;
+}
+.uploaded-area .row .details .size{
+    color: #404040;
+    font-size: 11px;
+}
+.uploaded-area i.fa-check{
+    font-size: 16px;
+}
+/*end upload*/
+/*.modal-footer .up-btn {
+    background-color: transparent;
+    border: 2px solid #4FBAF4;
+    font-weight: bold;
+    color: #373b52;
+    width:15rem;
+
+}
+.modal-footer .up-btn:hover,
+.modal-footer .up-btn:focus
+{
+    background-color: #4FBAF4;
+    color: whitesmoke;
+}*/
+
+.fancy1 {
+    width:90%;
+    background-color: transparent;
+    border: 2px solid #cacaca;
+    border-radius: 0px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 390;
+    letter-spacing: 2px;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 8px 30px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    transition: all 0.3s ease-in-out;
+    user-select: none;
+    font-size: 18px;
+
+}
+
+.fancy1::before {
+    content: " ";
+    width: 1.7rem;
+    height: 2px;
+    background: #cacaca;
+    top: 50%;
+    left: 1.5em;
+    position: absolute;
+    transform: translateY(-50%);
+    transform: translateX(230%);
+    transform-origin: center;
+    transition: background 0.3s linear, width 0.3s linear;
+}
+
+
+.fancy1 .text1 {
+    font-size: 1.125em;
+    line-height: 1.33333em;
+    padding-left: 2em;
+    display: block;
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+    text-transform: lowercase;
+    text-decoration: none;
+    color: #818181;
+    transform: translateX(30%);
+}
+
+.fancy1 .top-key1{
+    height: 2px;
+    width: 1.5625rem;
+    top: -2px;
+    left: 0.625rem;
+    position: absolute;
+    background: white;
+    transition: width 0.5s ease-out, left 0.3s ease-out;
+}
+
+.fancy1 .bottom-key-11 {
+    height: 2px;
+    width: 1.5625rem;
+    right: 1.875rem;
+    bottom: -2px;
+    position: absolute;
+    background: white;
+    transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy1 .bottom-key-21 {
+    height: 2px;
+    width: 0.625rem;
+    right: 0.625rem;
+    bottom: -2px;
+    position: absolute;
+    background: white;
+    transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy1:hover {
+    color: white;
+    background: #4FBAF4;
+    border-color: whitesmoke;
+
+}
+
+.fancy1:hover::before {
+    width: 1.5rem;
+    background: white;
+}
+
+.fancy1:hover .text1 {
+    color: white;
+    padding-left: 1.5em;
+}
+
+.fancy1:hover .top-key1 {
+    left: -2px;
+    width: 0px;
+    background: white;
+}
+
+.fancy1:hover .bottom-key-11,
+.fancy1:hover .bottom-key-21 {
+    right: 0;
+    width: 0;
+    background: #fff;
+}
