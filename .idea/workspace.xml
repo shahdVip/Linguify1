@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53ac28f2-83f3-414a-9cd8-56b711191e13" name="Changes" comment="added all files">
+      <change afterPath="$PROJECT_DIR$/studentsInterface/MMS.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/studentsInterface/cssStudents/MMS.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashmin-1.0.0/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashmin-1.0.0/READ-ME.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashmin-1.0.0/bootstrap-admin-template-free.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashmin-1.0.0/button.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashmin-1.0.0/button.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashmin-1.0.0/chart.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashmin-1.0.0/chart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashmin-1.0.0/element.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashmin-1.0.0/element.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashmin-1.0.0/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashmin-1.0.0/form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashmin-1.0.0/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashmin-1.0.0/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashmin-1.0.0/signin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashmin-1.0.0/signup.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashmin-1.0.0/table.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashmin-1.0.0/table.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashmin-1.0.0/typography.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashmin-1.0.0/typography.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashmin-1.0.0/widget.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashmin-1.0.0/widget.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teachersInterface/MMSs.html" beforeDir="false" afterPath="$PROJECT_DIR$/teachersInterface/MMSs.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +100,6 @@
       <updated>1683888529979</updated>
     </task>
     <task id="LOCAL-00004" summary="added all files">
-
       <created>1684417459007</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
@@ -125,7 +114,6 @@
       <updated>1684418511823</updated>
     </task>
     <option name="localTasksCounter" value="6" />
-
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,6 +125,21 @@
         <entry key="MAIN">
           <value>
             <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="shahd" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
