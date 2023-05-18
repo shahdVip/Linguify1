@@ -174,7 +174,7 @@ label .input:focus + span, label .input:valid + span {
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-.modal-body{
+.modal-body1{
     display: flex;
     flex-direction: column;
     align-items: center;
