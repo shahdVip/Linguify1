@@ -5,13 +5,56 @@
   <title>Title</title>
   <link rel="stylesheet" href="cssStudents/confirmationOTP.css">
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
 </head>
+
+
+<script>
+$(document).ready(function() {
+$('#verifySignUp').on('submit', function(e) {
+e.preventDefault(); // Prevent form submission
+
+// Get form data
+var formData = $('#verifySignUp').serialize();
+
+// Perform AJAX request
+$.ajax({
+type: 'POST',
+url: 'phpStudents/confirmSignUpHandle.php',
+data: formData,
+success: function(response) {
+// Handle the response
+if (response === 'success') {
+// Successful sign-in, redirect to the desired page
+  $('#error-msg').text("You have successfully created an account, you will now be directed to the main page so you can sign in, enjoy!").show();
+
+  setTimeout(function() {
+    window.location.href = '../mainPageUsignned.html';
+    console.log('After delay');
+  }, 5000);
+
+
+}
+else{
+$('#error-msg').text("Data entered failure, your credentials will be deleted and you will be directed to the main page so you could try again and create another account.").show();
+  setTimeout(function() {
+    window.location.href = '../mainPageUsignned.html';
+    console.log('After delay');
+  }, 5000);
+}
+}
+});
+});
+});
+
+</script>
 <body>
 <div class="container">
   <header></header>
   <h4>Enter OTP</h4>
   <p>A verification key of 4-numbers has been sent to the filled email, please enter it to start your journey! </p>
-  <form action="phpStudents/confirmSignUpHandle.php" method="post">
+  <form action="phpStudents/confirmSignUpHandle.php" method="post" id="verifySignUp">
     <div class="input-field">
       <input type="number" name="num1" pattern="[0-9]*" oninput="validateInput(this)" />
       <input type="number" disabled name="num2" pattern="[0-9]*" oninput="validateInput(this)" />
@@ -20,6 +63,8 @@
     </div>
     <button name="submit">Verify</button>
   </form>
+
+  <p id="error-msg"></p>
 
 </div>
 

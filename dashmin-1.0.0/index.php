@@ -148,77 +148,107 @@
 
 
             <!-- Recent Sales Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-light text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Recent Salse</h6>
-                        <a href="">Show All</a>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
-                                <tr class="text-dark">
-                                    <th scope="col"><input class="form-check-input" type="checkbox"></th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Invoice</th>
-                                    <th scope="col">Customer</th>
-                                    <th scope="col">Amount</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+          <div class="container-fluid pt-4 px-4">
+            <div class="bg-light text-center rounded p-4">
+              <div class="d-flex align-items-center justify-content-between mb-4">
+                <h6 class="mb-0">Teachers</h6>
+
+              </div>
+              <div class="mb-3">
+                <label for="searchEmail" class="form-label">Search by Email:</label>
+                <input type="text" class="form-control" id="searchEmail" placeholder="Search by Email">
+              </div>
+              <div >
+                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                  <thead>
+                  <tr class="text-dark">
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">PhoneNumber</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <?php
+                  $db_host = "localhost";
+                  $db_user = "root";
+                  $db_pass = "";
+                  $db_name = "Linguify";
+                  $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+
+                  $stmt = mysqli_prepare($conn, "SELECT email, fullName, phoneNumber FROM teachers");
+                  mysqli_stmt_execute($stmt);
+                  $result = mysqli_stmt_get_result($stmt);
+
+                  while ($row = mysqli_fetch_assoc($result)) {
+                    $name = $row['fullName'];
+                    $email = $row['email'];
+                    $phoneNumber = $row['phoneNumber'];
+                    ?>
+                    <tr>
+                      <td><?php echo $name; ?></td>
+                      <td><?php echo $email; ?></td>
+                      <td><?php echo $phoneNumber; ?></td>
+                      <td><a class="btn btn-sm btn-primary" href="#" onclick="deleteTeacher('<?php echo $email; ?>')">Detail</a></td>
+                    </tr>
+                    <?php
+                  }
+                  ?>
+                  </tbody>
+                </table>
+              </div>
             </div>
-            <!-- Recent Sales End -->
+          </div>
+
+          <div class="container-fluid pt-4 px-4">
+            <div class="bg-light text-center rounded p-4">
+              <div class="d-flex align-items-center justify-content-between mb-4">
+                <h6 class="mb-0">Students</h6>
+
+              </div>
+              <div style="overflow-y: scroll; max-height: 350px">
+                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                  <thead>
+                  <tr class="text-dark">
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">PhoneNumber</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <?php
+                  $db_host = "localhost";
+                  $db_user = "root";
+                  $db_pass = "";
+                  $db_name = "Linguify";
+                  $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+
+                  $stmt = mysqli_prepare($conn, "SELECT email, fullName, phoneNumber FROM students");
+                  mysqli_stmt_execute($stmt);
+                  $result = mysqli_stmt_get_result($stmt);
+
+                  while ($row = mysqli_fetch_assoc($result)) {
+                    $name = $row['fullName'];
+                    $email = $row['email'];
+                    $phoneNumber = $row['phoneNumber'];
+                    ?>
+                    <tr>
+                      <td><?php echo $name; ?></td>
+                      <td><?php echo $email; ?></td>
+                      <td><?php echo $phoneNumber; ?></td>
+                      <td><a class="btn btn-sm btn-primary" href="#" onclick="deleteStudent('<?php echo $email; ?>')">Detail</a></td>
+                    </tr>
+                    <?php
+                  }
+                  ?>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Sales End -->
 
 
             <!-- Widgets Start -->
@@ -260,5 +290,87 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
+
+<script>
+  function deleteTeacher(email) {
+    var confirmation = confirm("Are you sure you want to delete this teacher?");
+
+    if (confirmation) {
+      location.reload(true);
+      // Make an AJAX request to delete the teacher from the database
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          if (xhr.status === 200) {
+            // Teacher deleted successfully
+            // Remove the corresponding table row
+            var row = document.querySelector("td:contains('" + email + "')").parentNode;
+            row.parentNode.removeChild(row);
+          } else {
+            // An error occurred during deletion
+            console.error("Error deleting teacher:", xhr.responseText);
+          }
+        }
+      };
+
+      xhr.open("POST", "delete_teacher.php", true);
+      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhr.send("email=" + encodeURIComponent(email));
+    }
+  }
+</script>
+
+<script>
+  function deleteStudent(email) {
+    var confirmation = confirm("Are you sure you want to delete this student?");
+
+    if (confirmation) {
+      location.reload(true);
+      // Make an AJAX request to delete the teacher from the database
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          if (xhr.status === 200) {
+            // Teacher deleted successfully
+            // Remove the corresponding table row
+            var row = document.querySelector("td:contains('" + email + "')").parentNode;
+            row.parentNode.removeChild(row);
+
+          } else {
+            // An error occurred during deletion
+            console.error("Error deleting student:", xhr.responseText);
+          }
+        }
+      };
+
+      xhr.open("POST", "delete_student.php", true);
+      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhr.send("email=" + encodeURIComponent(email));
+
+
+    }
+  }
+
+
+    // JavaScript code to handle search functionality
+  // JavaScript code to handle search functionality
+  document.getElementById("searchEmail").addEventListener("input", function() {
+    var searchValue = this.value.toLowerCase();
+    var teacherRows = Array.from(document.querySelectorAll("#teacherTableBody tr"));
+    var filteredRows = [];
+
+    teacherRows.forEach(function(row) {
+      var emailCell = row.querySelector("td:nth-child(2)");
+      var emailText = emailCell.textContent.toLowerCase();
+
+      if (emailText.indexOf(searchValue) > -1) {
+        filteredRows.push(row.outerHTML);
+      }
+    });
+
+    var tableBody = document.getElementById("teacherTableBody");
+    tableBody.innerHTML = filteredRows.join("");
+  });
+</script>
 
 </html>
