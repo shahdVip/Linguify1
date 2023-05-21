@@ -11,11 +11,7 @@ $db_pass = "";
 $db_name = "Linguify";
 $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 
-$stmt = mysqli_prepare($conn, "DELETE FROM teachers WHERE email = ?");
-mysqli_stmt_bind_param($stmt, "s", $email);
-mysqli_stmt_execute($stmt);
-
-$stmt = mysqli_prepare($conn, "DELETE FROM users WHERE email = ?");
+$stmt = mysqli_prepare($conn, "DELETE FROM unvalidatedteachers WHERE email = ?");
 mysqli_stmt_bind_param($stmt, "s", $email);
 mysqli_stmt_execute($stmt);
 

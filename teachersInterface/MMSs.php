@@ -126,7 +126,26 @@
     <div class="container ">
         <div class="wrapper">
             <div class="content">
-                <h1>Welcome, MohAker</h1>
+
+              <?php
+              $email=$_COOKIE['variable'];
+              $db_host = "localhost";
+              $db_user = "root";
+              $db_pass = "";
+              $db_name = "Linguify";
+              $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+
+              $stmt = mysqli_prepare($conn, "SELECT fullName FROM teachers WHERE email = ?");
+              mysqli_stmt_bind_param($stmt, "s", $email);
+              mysqli_stmt_execute($stmt);
+              $result = mysqli_stmt_get_result($stmt);
+              $row = mysqli_fetch_assoc($result);
+
+                $name = $row['fullName'];
+
+                ?>
+                <h1 style="z-index: 1">Welcome, <?php echo $name ?></h1>
+
                 <p></p>
                 <div class="buttons">
                     <!--<a class="btn  rounded-pill main-btn "  style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: 1.7rem; --bs-btn-font-size: 0.9rem;" href="">View Courses</a>

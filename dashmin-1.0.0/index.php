@@ -53,7 +53,13 @@
               <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
             </div>
             <div class="ms-3">
-              <h6 class="mb-0">Mohammad Aker</h6>
+              <h6 class="mb-0">
+                <?php
+                $email=$_COOKIE['variable'];
+                echo $email;
+
+                ?>
+              </h6>
               <span>Admin</span>
             </div>
           </div>
@@ -154,11 +160,8 @@
                 <h6 class="mb-0">Teachers</h6>
 
               </div>
-              <div class="mb-3">
-                <label for="searchEmail" class="form-label">Search by Email:</label>
-                <input type="text" class="form-control" id="searchEmail" placeholder="Search by Email">
-              </div>
-              <div >
+
+              <div tyle="overflow-y: scroll; max-height: 350px">
                 <table class="table text-start align-middle table-bordered table-hover mb-0">
                   <thead>
                   <tr class="text-dark">
@@ -189,7 +192,7 @@
                       <td><?php echo $name; ?></td>
                       <td><?php echo $email; ?></td>
                       <td><?php echo $phoneNumber; ?></td>
-                      <td><a class="btn btn-sm btn-primary" href="#" onclick="deleteTeacher('<?php echo $email; ?>')">Detail</a></td>
+                      <td><a class="btn btn-danger m-2" href="#" onclick="deleteTeacher('<?php echo $email; ?>')">Delete</a></td>
                     </tr>
                     <?php
                   }
@@ -237,7 +240,7 @@
                       <td><?php echo $name; ?></td>
                       <td><?php echo $email; ?></td>
                       <td><?php echo $phoneNumber; ?></td>
-                      <td><a class="btn btn-sm btn-primary" href="#" onclick="deleteStudent('<?php echo $email; ?>')">Detail</a></td>
+                      <td><a class="btn btn-danger m-2" href="#" onclick="deleteStudent('<?php echo $email; ?>')">Delete</a></td>
                     </tr>
                     <?php
                   }
@@ -248,7 +251,110 @@
             </div>
           </div>
 
-          <!-- Recent Sales End -->
+
+
+
+          <div class="container-fluid pt-4 px-4">
+            <div class="bg-light text-center rounded p-4">
+              <div class="d-flex align-items-center justify-content-between mb-4">
+                <h6 class="mb-0">Unvalidated teachers</h6>
+
+              </div>
+              <div style="overflow-y: scroll; max-height: 350px">
+                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                  <thead>
+                  <tr class="text-dark">
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">PhoneNumber</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <?php
+                  $db_host = "localhost";
+                  $db_user = "root";
+                  $db_pass = "";
+                  $db_name = "Linguify";
+                  $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+
+                  $stmt = mysqli_prepare($conn, "SELECT email, fullName, phoneNumber FROM unvalidatedteachers");
+                  mysqli_stmt_execute($stmt);
+                  $result = mysqli_stmt_get_result($stmt);
+
+                  while ($row = mysqli_fetch_assoc($result)) {
+                    $name = $row['fullName'];
+                    $email = $row['email'];
+                    $phoneNumber = $row['phoneNumber'];
+                    ?>
+                    <tr>
+                      <td><?php echo $name; ?></td>
+                      <td><?php echo $email; ?></td>
+                      <td><?php echo $phoneNumber; ?></td>
+                      <td><a class="btn btn-success m-2" href="#" onclick="addUnvalidatedTeacher('<?php echo $email; ?>')">Accept</a><a class="btn btn-danger m-2" href="#" onclick="deleteUnvalidatedTeacher('<?php echo $email; ?>')">Delete</a></td>
+                    </tr>
+                    <?php
+                  }
+                  ?>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="container-fluid pt-4 px-4">
+            <div class="bg-light text-center rounded p-4">
+              <div class="d-flex align-items-center justify-content-between mb-4">
+                <h6 class="mb-0">Admins</h6>
+
+              </div>
+              <div class="mb-3">
+                <label for="searchEmail" class="form-label">Enter the email of the user you want to promote to admin</label>
+                <input type="text" id="searchEmail" class="form-control" placeholder="Enter email">
+                <button type="button" class="btn btn-outline-primary m-2" onclick="promoteToAdmin()">Promote</button>
+              </div>
+              <div class="table-responsive">
+                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                  <thead>
+                  <tr class="text-dark">
+                    <th scope="col">Email</th>
+                    <th scope="col">Password</th>
+
+                    <th scope="col">Action</th>
+                  </tr>
+                  </thead>
+                  <tbody id="teacherTableBody">
+                  <?php
+                  $db_host = "localhost";
+                  $db_user = "root";
+                  $db_pass = "";
+                  $db_name = "Linguify";
+                  $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+
+                  $stmt = mysqli_prepare($conn, "SELECT email, password FROM users where userType=2");
+                  mysqli_stmt_execute($stmt);
+                  $result = mysqli_stmt_get_result($stmt);
+
+                  while ($row = mysqli_fetch_assoc($result)) {
+                    $email = $row['email'];
+                    $password = $row['password'];
+                    ?>
+                    <tr>
+                      <td><?php echo $email; ?></td>
+                      <td><?php echo $password; ?></td>
+                      <td><a class="btn btn-danger m-2" href="#" onclick="deleteAdmin('<?php echo $email; ?>')">Delete</a></td>
+                    </tr>
+                    <?php
+                  }
+                  ?>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
 
 
             <!-- Widgets Start -->
@@ -325,7 +431,6 @@
     var confirmation = confirm("Are you sure you want to delete this student?");
 
     if (confirmation) {
-      location.reload(true);
       // Make an AJAX request to delete the teacher from the database
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function() {
@@ -348,29 +453,142 @@
       xhr.send("email=" + encodeURIComponent(email));
 
 
+
     }
   }
 
 
-    // JavaScript code to handle search functionality
-  // JavaScript code to handle search functionality
-  document.getElementById("searchEmail").addEventListener("input", function() {
-    var searchValue = this.value.toLowerCase();
-    var teacherRows = Array.from(document.querySelectorAll("#teacherTableBody tr"));
-    var filteredRows = [];
+  function deleteUnvalidatedTeacher(email) {
+    var confirmation = confirm("Are you sure you want to delete this unvalidated teacher?");
 
-    teacherRows.forEach(function(row) {
-      var emailCell = row.querySelector("td:nth-child(2)");
-      var emailText = emailCell.textContent.toLowerCase();
+    if (confirmation) {
+      location.reload(true);
+      // Make an AJAX request to delete the from the database
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          if (xhr.status === 200) {
+            // Teacher deleted successfully
+            // Remove the corresponding table row
+            var row = document.querySelector("td:contains('" + email + "')").parentNode;
+            row.parentNode.removeChild(row);
 
-      if (emailText.indexOf(searchValue) > -1) {
-        filteredRows.push(row.outerHTML);
+          } else {
+            // An error occurred during deletion
+            console.error("Error deleting unvalidated teacher:", xhr.responseText);
+          }
+        }
+      };
+
+      xhr.open("POST", "delete_UnvalidatedTeacher.php", true);
+      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhr.send("email=" + encodeURIComponent(email));
+
+
+    }
+  }
+
+  function addUnvalidatedTeacher(email) {
+    var confirmation = confirm("Are you sure you want to approve this teacher?");
+
+    if (confirmation) {
+      location.reload(true);
+      // Make an AJAX request to add the teacher to the database
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          // Add a delay of 2 seconds before processing the response
+
+            if (xhr.status === 200) {
+              // Teacher added successfully
+              // Remove the corresponding table row
+              var row = document.querySelector("td:contains('" + email + "')").parentNode;
+              row.parentNode.removeChild(row);
+            } else {
+              // An error occurred during teacher addition
+              console.error("Error adding unvalidated teacher:", xhr.responseText);
+            }
+        // Delay of 2 seconds (2000 milliseconds)
+        }
+      };
+
+      xhr.open("POST", "addUnvalidatedTeacher.php", true);
+      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhr.send("email=" + encodeURIComponent(email));
+    }
+  }
+
+  function promoteToAdmin() {
+    var confirmation = confirm("Are you sure you want to promote this user to admin?");
+
+    if (confirmation) {
+      location.reload(true);
+      // Make an AJAX request to add the teacher to the database
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          // Add a delay of 2 seconds before processing the response
+
+          if (xhr.status === 200) {
+            // Teacher added successfully
+            // Remove the corresponding table row
+
+          } else {
+            // An error occurred during teacher addition
+            console.error("Error adding unvalidated teacher:", xhr.responseText);
+          }
+          // Delay of 2 seconds (2000 milliseconds)
+        }
+      };
+
+      xhr.open("POST", "addAdmin.php", true);
+      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+      var emailInput = document.getElementById("searchEmail");
+      var email = emailInput.value.trim();
+
+      if (email !== "") {
+        xhr.send("email=" + encodeURIComponent(email));
+      } else {
+        // Handle the case when the email input is empty
+        confirm("You have not typed an email.")
       }
-    });
+    }
+  }
 
-    var tableBody = document.getElementById("teacherTableBody");
-    tableBody.innerHTML = filteredRows.join("");
-  });
+
+  function deleteAdmin(email) {
+    var confirmation = confirm("Are you sure you want to delete this admin?");
+
+    if (confirmation) {
+      location.reload(true);
+      // Make an AJAX request to add the teacher to the database
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          // Add a delay of 2 seconds before processing the response
+
+          if (xhr.status === 200) {
+            // Teacher added successfully
+            // Remove the corresponding table row
+            var row = document.querySelector("td:contains('" + email + "')").parentNode;
+            row.parentNode.removeChild(row);
+          } else {
+            // An error occurred during teacher addition
+            console.error("Error adding unvalidated teacher:", xhr.responseText);
+          }
+          // Delay of 2 seconds (2000 milliseconds)
+        }
+      };
+
+      xhr.open("POST", "deleteAdmin.php", true);
+      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhr.send("email=" + encodeURIComponent(email));
+    }
+  }
+
+
+
 </script>
 
 </html>

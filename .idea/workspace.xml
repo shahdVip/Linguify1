@@ -6,15 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="53ac28f2-83f3-414a-9cd8-56b711191e13" name="Changes" comment="added all files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/signInStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/signInStyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashmin-1.0.0/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashmin-1.0.0/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studentsInterface/confirmSignUp.html" beforeDir="false" afterPath="$PROJECT_DIR$/studentsInterface/confirmSignUp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashmin-1.0.0/delete_student.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashmin-1.0.0/delete_student.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashmin-1.0.0/delete_teacher.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashmin-1.0.0/delete_teacher.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashmin-1.0.0/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashmin-1.0.0/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logintest.php" beforeDir="false" afterPath="$PROJECT_DIR$/logintest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainPageUsignned.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainPageUsignned.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/studentsInterface/phpStudents/confirmSignUpHandle.php" beforeDir="false" afterPath="$PROJECT_DIR$/studentsInterface/phpStudents/confirmSignUpHandle.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teachersInterface/MMSs.html" beforeDir="false" afterPath="$PROJECT_DIR$/teachersInterface/MMSs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teachersInterface/confirmSignUpTeacher.html" beforeDir="false" afterPath="$PROJECT_DIR$/teachersInterface/confirmSignUpTeacher.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teachersInterface/courseInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/teachersInterface/courseInfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teachersInterface/phpTeachers/confirmSignUpTeacherHandle.php" beforeDir="false" afterPath="$PROJECT_DIR$/teachersInterface/phpTeachers/confirmSignUpTeacherHandle.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teachersInterface/phpTeachers/teacherSignUpHandle.php" beforeDir="false" afterPath="$PROJECT_DIR$/teachersInterface/phpTeachers/teacherSignUpHandle.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teachersInterface/MMSs.html" beforeDir="false" afterPath="$PROJECT_DIR$/teachersInterface/MMSs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teachersInterface/mainPageSignedTeacher.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/teachersInterface/teacherInfoCard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/teachersInterface/teacherSignUp.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,12 +43,12 @@
     <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/teachersInterface/MMSs.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/teachersInterface/MMSs.php" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
     <include_path>
       <path value="$PROJECT_DIR$/../../php" />
     </include_path>
@@ -64,6 +65,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Applications/XAMPP/xamppfiles/htdocs/Linguify1/dashmin-1.0.0&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -73,6 +75,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dashmin-1.0.0" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -83,6 +90,10 @@
       <updated>1681459985382</updated>
       <workItem from="1681459986513" duration="315000" />
       <workItem from="1683752608735" duration="3289000" />
+      <workItem from="1684497942000" duration="7117000" />
+      <workItem from="1684526218200" duration="13000" />
+      <workItem from="1684526296480" duration="8265000" />
+      <workItem from="1684577320466" duration="1834000" />
     </task>
     <task id="LOCAL-00001" summary="added all files">
       <created>1681460195377</created>
@@ -119,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684418511823</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added all files">
+      <created>1684497828548</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684497828548</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

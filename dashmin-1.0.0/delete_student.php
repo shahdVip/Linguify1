@@ -15,6 +15,10 @@ $stmt = mysqli_prepare($conn, "DELETE FROM students WHERE email = ?");
 mysqli_stmt_bind_param($stmt, "s", $email);
 mysqli_stmt_execute($stmt);
 
+$stmt = mysqli_prepare($conn, "DELETE FROM users WHERE email = ?");
+mysqli_stmt_bind_param($stmt, "s", $email);
+mysqli_stmt_execute($stmt);
+
 // Check if the deletion was successful
 if (mysqli_stmt_affected_rows($stmt) > 0) {
   // Deletion successful

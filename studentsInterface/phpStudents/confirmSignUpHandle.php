@@ -43,7 +43,7 @@ if (isset($_COOKIE['otp'])) {
     setcookie('age', '', time() - 3600, '/');
 
     $query = "INSERT INTO students (email, password, fullName, phoneNumber, age) VALUES ('$email', '$password', '$fullName','$phone','$age')";
-    $query2 = "INSERT INTO users (email, password, usertype) VALUES ('$email', '$password', false)";
+    $query2 = "INSERT INTO users (email, password, usertype) VALUES ('$email', '$password', 0)";
     if (mysqli_query($conn, $query) &&mysqli_query($conn, $query2)) {
       echo "success";
     }
