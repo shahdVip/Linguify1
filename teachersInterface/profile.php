@@ -85,7 +85,12 @@ if ($result && mysqli_num_rows($result) > 0) {
 </nav>
 
 <div class="container "id="profileC">
-  <div class="box"></div>
+  <div class="box">
+
+      <button class="UButton">
+          <i class="fa-solid fa-check fa-2xl" style="color: white;"></i>
+      </button>
+  </div>
   <div class="box overlay">
       <section class="avatar">
         <br>
@@ -116,6 +121,7 @@ if ($result && mysqli_num_rows($result) > 0) {
 
         <form method="post" enctype="multipart/form-data" action="phpTeachers/uploadPic.php">
           <input type="file" id="picture" name="picture" accept="image/*" required><br><br>
+
           <input type="submit" name="submit" value="Upload">
         </form>
       </section>
@@ -227,8 +233,15 @@ if ($result && mysqli_num_rows($result) > 0) {
     ?>
 
     </p>
-  <button id="editDescription" onclick="startEditContent()">edit description</button>
-  <button id="saveContentButton" onclick="saveContent()" style="visibility: hidden">save content</button>
+    <button class="Ebutton" id="editDescription" onclick="startEditContent()">
+        <i class="fa-regular fa-pen-to-square fa-2xl" style="color: #bcc4d2;"></i>
+    </button>
+  <!--<button id="editDescription" onclick="startEditContent()">edit description</button>-->
+    <button class="SButton" id="saveContentButton" onclick="saveContent()" style="visibility: hidden">
+        <i class="fa-solid fa-check fa-2xl" style="color: #bcc4d2;"></i>
+    </button>
+
+  <!--<button id="saveContentButton" onclick="saveContent()" style="visibility: hidden">save content</button>-->
 </div>
 <footer class="footer">
     <div class="container" id="footerContainer">
