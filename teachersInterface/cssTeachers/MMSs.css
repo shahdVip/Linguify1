@@ -456,6 +456,12 @@ body{
     transform: translateY(60%);
 }
 
+.button:hover .svgIcon2 {
+  width: 50px;
+  transition-duration: .3s;
+  transform: translateY(40%);
+}
+
 .button::before {
     position: absolute;
     top: -20px;
@@ -463,6 +469,15 @@ body{
     color: white;
     transition-duration: .3s;
     font-size: 2px;
+}
+
+.button2::before {
+  position: absolute;
+  top: -20px;
+  content: "View";
+  color: white;
+  transition-duration: .3s;
+  font-size: 2px;
 }
 
 .button:hover::before {

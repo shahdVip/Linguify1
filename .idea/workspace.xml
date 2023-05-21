@@ -6,16 +6,73 @@
   <component name="ChangeListManager">
     <list default="true" id="53ac28f2-83f3-414a-9cd8-56b711191e13" name="Changes" comment="added all files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashmin-1.0.0/delete_student.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashmin-1.0.0/delete_student.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashmin-1.0.0/delete_teacher.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashmin-1.0.0/delete_teacher.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashmin-1.0.0/button.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashmin-1.0.0/button.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashmin-1.0.0/chart.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashmin-1.0.0/chart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashmin-1.0.0/element.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashmin-1.0.0/element.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashmin-1.0.0/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashmin-1.0.0/form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashmin-1.0.0/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashmin-1.0.0/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logintest.php" beforeDir="false" afterPath="$PROJECT_DIR$/logintest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashmin-1.0.0/table.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashmin-1.0.0/table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashmin-1.0.0/typography.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashmin-1.0.0/typography.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashmin-1.0.0/widget.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashmin-1.0.0/widget.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-10 copy 2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-10 copy 3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-10 copy 4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-10 copy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-11 copy 2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-11 copy 3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-11 copy 4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-11 copy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-2 copy 2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-2 copy 3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-2 copy 4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-2 copy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-3 copy 2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-3 copy 3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-3 copy 4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-3 copy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-4 copy 2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-4 copy 3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-4 copy 4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-4 copy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-5 copy 2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-5 copy 3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-5 copy 4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-5 copy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-8 copy 2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-8 copy 3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-8 copy 4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-8 copy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-9 copy 2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-9 copy 3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-9 copy 4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-9 copy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/990949.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/Cthumbnail.png" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/c1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainPageUsignned.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainPageUsignned.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studentsInterface/phpStudents/confirmSignUpHandle.php" beforeDir="false" afterPath="$PROJECT_DIR$/studentsInterface/phpStudents/confirmSignUpHandle.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teachersInterface/MMSs.html" beforeDir="false" afterPath="$PROJECT_DIR$/teachersInterface/MMSs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teachersInterface/mainPageSignedTeacher.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/teachersInterface/teacherInfoCard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/teachersInterface/teacherSignUp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studentsInterface/Cviewer.html" beforeDir="false" afterPath="$PROJECT_DIR$/studentsInterface/Cviewer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studentsInterface/MMS.html" beforeDir="false" afterPath="$PROJECT_DIR$/studentsInterface/MMS.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studentsInterface/allCourses.html" beforeDir="false" afterPath="$PROJECT_DIR$/studentsInterface/allCourses.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studentsInterface/cssStudents/MMS.css" beforeDir="false" afterPath="$PROJECT_DIR$/studentsInterface/cssStudents/MMS.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studentsInterface/finalStuSignup.html" beforeDir="false" afterPath="$PROJECT_DIR$/studentsInterface/finalStuSignup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teachersInterface/CMU.html" beforeDir="false" afterPath="$PROJECT_DIR$/teachersInterface/CMU.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teachersInterface/MMSs.php" beforeDir="false" afterPath="$PROJECT_DIR$/teachersInterface/MMSs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teachersInterface/courseInfo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/teachersInterface/cssTeachers/MMSs.css" beforeDir="false" afterPath="$PROJECT_DIR$/teachersInterface/cssTeachers/MMSs.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teachersInterface/cssTeachers/profileStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/teachersInterface/cssTeachers/profileStyles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teachersInterface/finalTeacherSignUp.html" beforeDir="false" afterPath="$PROJECT_DIR$/teachersInterface/finalTeacherSignUp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teachersInterface/mainPageCard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/teachersInterface/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/teachersInterface/profile.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +118,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -94,6 +152,10 @@
       <workItem from="1684526218200" duration="13000" />
       <workItem from="1684526296480" duration="8265000" />
       <workItem from="1684577320466" duration="1834000" />
+      <workItem from="1684745156958" duration="39896000" />
+      <workItem from="1685131789693" duration="2452000" />
+      <workItem from="1685203236206" duration="683000" />
+      <workItem from="1685780478529" duration="622000" />
     </task>
     <task id="LOCAL-00001" summary="added all files">
       <created>1681460195377</created>
