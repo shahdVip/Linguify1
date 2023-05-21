@@ -22,11 +22,11 @@ $input4 = $_POST['num4'];
 
 
 $concatenated = $input1 . $input2 . $input3 . $input4;
-echo $concatenated;
+
 
 if (isset($_COOKIE['otp'])) {
   $otp = $_COOKIE['otp'];
-  echo $otp;
+
   if($otp==$concatenated){
 
 
@@ -39,11 +39,20 @@ if (isset($_COOKIE['otp'])) {
     $phone = $_COOKIE['phone'];
     $languages = $_COOKIE['languages'];
 
+    setcookie('email', '', time() - 3600, '/');
+    setcookie('password', '', time() - 3600, '/');
+    setcookie('fullName', '', time() - 3600, '/');
+    setcookie('degree', '', time() - 3600, '/');
+    setcookie('university', '', time() - 3600, '/');
+    setcookie('phone', '', time() - 3600, '/');
+    setcookie('languages', '', time() - 3600, '/');
 
-    $query = "INSERT INTO teachers (email, password, fullName, phoneNumber, university, degree, languages) VALUES ('$email', '$password', '$fullName','$phone','$university','$degree','$languages')";
-    $query2 = "INSERT INTO users (email, password, usertype) VALUES ('$email', '$password', true)";
 
-    if (mysqli_query($conn, $query) &&mysqli_query($conn, $query2)) {
+
+    $query = "INSERT INTO unvalidatedteachers (email, password, fullName, phoneNumber, university, degree, languages) VALUES ('$email', '$password', '$fullName','$phone','$university','$degree','$languages')";
+    //$query2 = "INSERT INTO users (email, password, usertype) VALUES ('$email', '$password', true)";
+
+    if (mysqli_query($conn, $query)) {
       echo "success";
     }
 

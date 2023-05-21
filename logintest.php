@@ -38,6 +38,11 @@ if (!$conn) {
         echo 'success student';
       }
 
+      else if($row['usertype']==2){
+
+        echo 'success admin';
+      }
+
      // echo'success';
 
    //   header("Location: template.html");

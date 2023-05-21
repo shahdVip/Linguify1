@@ -126,8 +126,27 @@
     <div class="container ">
         <div class="wrapper">
             <div class="content">
-                <h1>Welcome, Teacher</h1>
-                <p>kegvejngthbgjbbijingtjmbrttyjtryndtbgvfd</p>
+
+              <?php
+              $email=$_COOKIE['variable'];
+              $db_host = "localhost";
+              $db_user = "root";
+              $db_pass = "";
+              $db_name = "Linguify";
+              $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+
+              $stmt = mysqli_prepare($conn, "SELECT fullName FROM teachers WHERE email = ?");
+              mysqli_stmt_bind_param($stmt, "s", $email);
+              mysqli_stmt_execute($stmt);
+              $result = mysqli_stmt_get_result($stmt);
+              $row = mysqli_fetch_assoc($result);
+
+                $name = $row['fullName'];
+
+                ?>
+                <h1 style="z-index: 1">Welcome, <?php echo $name ?></h1>
+
+                <p></p>
                 <div class="buttons">
                     <!--<a class="btn  rounded-pill main-btn "  style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: 1.7rem; --bs-btn-font-size: 0.9rem;" href="">View Courses</a>
                     <a class="btn  rounded-pill main-btn "  style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: 1.7rem; --bs-btn-font-size: 0.9rem;" href="">Open Profile</a>-->
@@ -312,7 +331,7 @@
     </div>
 
 
-
+    <!--</div>-->
 </section>
 <div class="modal fade" id="CourseBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="CourseBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered ">
@@ -340,7 +359,7 @@
                     </label>
                     <label>
                         <textarea required="" rows="3" placeholder="" class="input01"></textarea>
-                        <span>Targeted audience (5 words)</span>
+                        <span> Course Description (70 words)</span>
                     </label>
 
 
@@ -361,7 +380,7 @@
     <div class="modal-dialog modal-dialog-centered modal-lg w-75 align-items-center justify-content-center">
         <div class="modal-content w-75">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel1">Course Material</h1>
+                <h1 class="modal-title fs-5" id="staticBackdropLabel1">Modal title</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body1 ">
@@ -432,7 +451,95 @@
     </div>
 </div>
 
+<!--<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg w-75">
+        <div class="modal-content w-75">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body ">
+                <div class="wave-group1" id="fileLabel">
+                    <input required="" type="text" class="input">
+                    <span class="bar"></span>
+                    <label class="label">
+                        <span class="label-char" style="--index: 0">F</span>
+                        <span class="label-char" style="--index: 1">i</span>
+                        <span class="label-char" style="--index: 2">l</span>
+                        <span class="label-char" style="--index: 3">e</span>
+                        <span class="label-char" style="--index: 4">&nbsp</span>
+                        <span class="label-char" style="--index: 5">l</span>
+                        <span class="label-char" style="--index: 6">a</span>
+                        <span class="label-char" style="--index: 7">b</span>
+                        <span class="label-char" style="--index: 8">e</span>
+                        <span class="label-char" style="--index: 9">l</span>
 
+                    </label>
+                </div>
+                <div class="radio-inputs">
+                    <label>
+                        <input class="radio-input" type="radio" name="uploadType">
+                        <span class="radio-tile">
+					<span class="radio-icon">
+                        <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                        <lord-icon
+                                src="https://cdn.lordicon.com/xhitaejr.json"
+                                trigger="hover"
+                                colors="outline:#131432,primary:#3a3347,secondary:#4fbaf4,secondary 2:#ebe6ef"
+                                style="width:150px;height:150px">
+                        </lord-icon>
+                    </span>
+					<span class="radio-label">Video</span>
+				</span>
+                    </label>
+                    <label>
+                        <input checked="" class="radio-input" type="radio" name="uploadType">
+                        <span class="radio-tile">
+				<span class="radio-icon">
+                    <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                    <lord-icon
+                            src="https://cdn.lordicon.com/nocovwne.json"
+                            trigger="hover"
+                            colors="primary:#121331,secondary:#4fbaf4"
+                            state="hover-2"
+                            style="width:150px;height:150px">
+                    </lord-icon>
+				</span>
+				<span class="radio-label">Documents</span>
+			</span>
+                    </label>
+
+                </div>
+                <div class="wave-group" id="videoLinkField">
+                    <input required="" type="text" class="input">
+                    <span class="bar"></span>
+                    <label class="label">
+                        <span class="label-char" style="--index: 0">L</span>
+                        <span class="label-char" style="--index: 1">i</span>
+                        <span class="label-char" style="--index: 2">n</span>
+                        <span class="label-char" style="--index: 3">k</span>
+                    </label>
+                </div>
+                <div class="wrapper" id="fileUploadField">
+                    <header>Upload Course Files Here!</header>
+                    <form action="#">
+                        <input class="file-input" type="file" name="file" hidden>
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Browse File to Upload</p>
+                    </form>
+                    <section class="progress-area"></section>
+                    <section class="uploaded-area"></section>
+                </div>
+
+
+            </div>
+            <div class="modal-footer justify-content-center align-items-center">
+                <a class="btn ms-2 rounded-pill up-btn "   style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: 1.7rem; --bs-btn-font-size: 1.2rem;" href="">Upload</a>
+
+            </div>
+        </div>
+    </div>
+</div>-->
 
 <footer class="footer" style=" width: 100%;">
     <div class="container" id="footerContainer">

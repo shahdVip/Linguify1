@@ -36,8 +36,14 @@ if (isset($_COOKIE['otp'])) {
     $phone = $_COOKIE['phone'];
     $age = $_COOKIE['age'];
 
+    setcookie('email', '', time() - 3600, '/');
+    setcookie('password', '', time() - 3600, '/');
+    setcookie('fullName', '', time() - 3600, '/');
+    setcookie('phone', '', time() - 3600, '/');
+    setcookie('age', '', time() - 3600, '/');
+
     $query = "INSERT INTO students (email, password, fullName, phoneNumber, age) VALUES ('$email', '$password', '$fullName','$phone','$age')";
-    $query2 = "INSERT INTO users (email, password, usertype) VALUES ('$email', '$password', false)";
+    $query2 = "INSERT INTO users (email, password, usertype) VALUES ('$email', '$password', 0)";
     if (mysqli_query($conn, $query) &&mysqli_query($conn, $query2)) {
       echo "success";
     }

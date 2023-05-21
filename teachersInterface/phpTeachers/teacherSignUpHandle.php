@@ -29,22 +29,22 @@ $email = mysqli_real_escape_string($conn, $_POST['email']);
 setrawcookie('email', $email, time() + 3600, '/');
 
 $password = mysqli_real_escape_string($conn, $_POST['Password']);
-//setrawcookie('password', $password, time() + 3600, '/');
+setrawcookie('password', $password, time() + 3600, '/');
 
 $fullName = mysqli_real_escape_string($conn, $_POST['fullName']);
-//setrawcookie('fullName', $fullName, time() + 3600, '/');
+setrawcookie('fullName', $fullName, time() + 3600, '/');
 
 $degree = mysqli_real_escape_string($conn, $_POST['degree']);
-//setrawcookie('degree', $degree, time() + 3600, '/');
+setrawcookie('degree', $degree, time() + 3600, '/');
 
 $university = mysqli_real_escape_string($conn, $_POST['university']);
-//setrawcookie('university', $university, time() + 3600, '/');
+setrawcookie('university', $university, time() + 3600, '/');
 
 $phone= mysqli_real_escape_string($conn, $_POST['phone']);
-//setrawcookie('phone', $phone, time() + 3600, '/');
+setrawcookie('phone', $phone, time() + 3600, '/');
 
 $languages = mysqli_real_escape_string($conn, $_POST['languages']);
-//setrawcookie('languages', $languages, time() + 3600, '/');
+setrawcookie('languages', $languages, time() + 3600, '/');
 
 $repeatPassword = mysqli_real_escape_string($conn, $_POST['repeatPassword']);
 
