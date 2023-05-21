@@ -16,6 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/05ac3d6c76.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 <body>
@@ -56,10 +57,25 @@
 </nav>
 
 <div class="container "id="profileC">
-  <div class="box"></div>
+  <div class="box">
+
+    <!--<button class="UButton">
+      <i class="fa-solid fa-check fa-2xl" style="color: white;"></i>
+    </button>-->
+  </div>
   <div class="box overlay">
     <section class="avatar">
       <iframe src='https://my.spline.design/avatarcopy-80c4098ab5bd7b65077c7499beea8dd4/' frameborder='0' width='100%' height='100%'></iframe>
+      <form method="post" enctype="multipart/form-data" action="phpTeachers/uploadPic.php">
+        <input type="file" id="picture" name="picture" accept="image/*" required><br><br>
+        <button class="PButton">
+          <i class="fa-regular fa-pen-to-square fa-2xl" style="color: white;"></i>
+        </button>
+        <input type="submit" name="submit" value="Upload">
+        <button class="UButton">
+          <i class="fa-solid fa-check fa-2xl" style="color: white;"></i>
+        </button>
+      </form>
     </section>
     <hr>
     <div class="about-list">
@@ -112,6 +128,12 @@
 <div class="about">
   <h3 class="dark-color">About Me</h3>
   <p>description description description description description description description description description description description description description description description description description description description description description </p>
+  <button class="Ebutton">
+    <i class="fa-regular fa-pen-to-square fa-2xl" style="color: #bcc4d2;"></i>
+  </button>
+  <button class="SButton">
+    <i class="fa-solid fa-check fa-2xl" style="color: #bcc4d2;"></i>
+  </button>
 </div>
 <footer class="footer">
   <div class="container" id="footerContainer">

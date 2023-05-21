@@ -535,9 +535,18 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-
+    display: flex;
+    flex-direction: column;
+    gap:15px;
     background-image: linear-gradient( white , var(--blue-color));
 }
+.PButton,.UButton{
+    position:relative;
+    top:70%;
+    right:22%;
+}
+
+
 .overlay {
     z-index: 1;
     margin: 60px 0px 0px 140px;
@@ -577,7 +586,34 @@ body{
 }
 .about p {
     font-size: 18px;
-    height:50vh;
+    height:35vh;
+    margin-bottom:0px;
+}
+.about .Ebutton{
+
+    position: relative;
+    left:85%;
+    margin-bottom:80px;
+
+}
+ input[type=submit] {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.about .SButton{
+    position: relative;
+    left:86%;
+    margin-bottom:80px;
+
+}
+button{
+    background-color: transparent;
+    border: 0px solid transparent;
 }
 .about p mark {
     font-weight: 600;
