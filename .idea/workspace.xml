@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="53ac28f2-83f3-414a-9cd8-56b711191e13" name="Changes" comment="added all files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studentsInterface/cssStudents/stuProfile.css" beforeDir="false" afterPath="$PROJECT_DIR$/studentsInterface/cssStudents/stuProfile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studentsInterface/stuProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/studentsInterface/stuProfile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teachersInterface/cssTeachers/profileStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/teachersInterface/cssTeachers/profileStyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teachersInterface/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/teachersInterface/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studentsInterface/allCourses.html" beforeDir="false" afterPath="$PROJECT_DIR$/studentsInterface/allCourses.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teachersInterface/MMSs.php" beforeDir="false" afterPath="$PROJECT_DIR$/teachersInterface/MMSs.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +77,7 @@
       <updated>1681459985382</updated>
       <workItem from="1681459986513" duration="315000" />
       <workItem from="1683752608735" duration="3289000" />
-      <workItem from="1684506321002" duration="4237000" />
+      <workItem from="1684506321002" duration="5301000" />
     </task>
     <task id="LOCAL-00001" summary="added all files">
       <created>1681460195377</created>
@@ -137,7 +135,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684449919163</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added all files">
+      <created>1684664480290</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1684664480290</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added all files">
+      <created>1684664710099</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684664710099</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
