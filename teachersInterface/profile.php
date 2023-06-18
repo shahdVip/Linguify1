@@ -67,12 +67,9 @@ if ($result && mysqli_num_rows($result) > 0) {
         <li class="nav-item">
           <a class="nav-link p-4 p-lg-3 active mx-5"   href="#">Profile</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link p-4 p-lg-3 mx-5"  href="#">Courses</a>
-        </li>
 
         <li class="nav-item">
-          <a class="nav-link p-4 p-lg-3 mx-5"   aria-current="page" href="#">Home</a>
+          <a class="nav-link p-4 p-lg-3 mx-5"   aria-current="page" href="#" onclick="window.location.href='MMSs.php';">Home</a>
         </li>
 
       </ul>
@@ -87,9 +84,7 @@ if ($result && mysqli_num_rows($result) > 0) {
 <div class="container "id="profileC">
   <div class="box">
 
-      <button class="UButton">
-          <i class="fa-solid fa-check fa-2xl" style="color: white;"></i>
-      </button>
+
   </div>
   <div class="box overlay">
       <section class="avatar">
@@ -122,12 +117,15 @@ if ($result && mysqli_num_rows($result) > 0) {
         <form method="post" enctype="multipart/form-data" action="phpTeachers/uploadPic.php">
           <input type="file" id="picture" name="picture" accept="image/*" required><br><br>
 
-          <input type="submit" name="submit" value="Upload">
+          <input class="btn btn-success m-2" type="submit" name="submit" value="Upload">
+
         </form>
       </section>
       <hr>
       <div class="about-list">
           <div>
+
+
               <div class="media">
                   <label>Name:</label>
                   <p>         <?php

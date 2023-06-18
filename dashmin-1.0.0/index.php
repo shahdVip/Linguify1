@@ -305,6 +305,67 @@
 
 
 
+
+
+
+          <div class="container-fluid pt-4 px-4">
+            <div class="bg-light text-center rounded p-4">
+              <div class="d-flex align-items-center justify-content-between mb-4">
+                <h6 class="mb-0">Unvalidated courses</h6>
+
+              </div>
+              <div style="overflow-y: scroll; max-height: 350px">
+                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                  <thead>
+                  <tr class="text-dark">
+                    <th scope="col">Course name</th>
+                    <th scope="col">Teacher email</th>
+                    <th scope="col">course Language</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <?php
+                  $db_host = "localhost";
+                  $db_user = "root";
+                  $db_pass = "";
+                  $db_name = "Linguify";
+                  $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+
+                  $stmt = mysqli_prepare($conn, "SELECT teacherEmail, courseName, targetLanguage FROM unvalidatedCourses");
+                  mysqli_stmt_execute($stmt);
+                  $result = mysqli_stmt_get_result($stmt);
+
+                  while ($row = mysqli_fetch_assoc($result)) {
+                    $name = $row['courseName'];
+                    $email = $row['teacherEmail'];
+                    $targetLanguage = $row['targetLanguage'];
+                    ?>
+                    <tr>
+                      <td><?php echo $name; ?></td>
+                      <td><?php echo $email; ?></td>
+                      <td><?php echo $targetLanguage; ?></td>
+                      <td><a class="btn btn-info m-2" href="#" onclick="viewCourse('<?php echo $name; ?>','<?php echo $email; ?>')">View Course</a><a class="btn btn-success m-2" href="#" onclick="addCourse('<?php echo $email; ?>','<?php echo $name; ?>')">Accept</a><a class="btn btn-danger m-2" href="#" onclick="deleteCourse('<?php echo $email; ?>','<?php echo $name; ?>')">Delete</a></td>
+                    </tr>
+                    <?php
+                  }
+                  ?>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
           <div class="container-fluid pt-4 px-4">
             <div class="bg-light text-center rounded p-4">
               <div class="d-flex align-items-center justify-content-between mb-4">
@@ -587,6 +648,91 @@
     }
   }
 
+
+
+  function viewCourse(courseName, teacherEmail) {
+    // Create a form element
+    var form = document.createElement('form');
+
+    // Set the form attributes
+    form.method = 'POST';
+    form.action = '../studentsInterface/Cviewer.php'; // Specify the URL of the PHP file that will process the data
+
+    // Create input elements for the parameters
+    var inputCourseName = document.createElement('input');
+    inputCourseName.type = 'hidden';
+    inputCourseName.name = 'courseName';
+    inputCourseName.value = courseName;
+
+    var inputTeacherEmail = document.createElement('input');
+    inputTeacherEmail.type = 'hidden';
+    inputTeacherEmail.name = 'teacherEmail';
+    inputTeacherEmail.value = teacherEmail;
+
+    // Append the input elements to the form
+    form.appendChild(inputCourseName);
+    form.appendChild(inputTeacherEmail);
+
+    // Append the form to the document body
+    document.body.appendChild(form);
+
+    // Submit the form
+    form.submit();
+  }
+
+
+
+  function deleteCourse(email, courseName) {
+    var confirmation = confirm("Are you sure you want to delete this course");
+
+    if (confirmation) {
+      // Make an AJAX request to delete the student from the database
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          if (xhr.status === 200) {
+            // Student deleted successfully
+            // Remove the corresponding table row
+            location.reload(true);
+
+
+          } else {
+            // An error occurred during deletion
+            console.error("Error deleting student:", xhr.responseText);
+          }
+        }
+      };
+
+      xhr.open("POST", "deleteCourse.php", true);
+      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhr.send("email=" + encodeURIComponent(email) + "&courseName=" + encodeURIComponent(courseName));
+    }
+  }
+
+  function addCourse(email, courseName) {
+    var confirmation = confirm("Are you sure you want to add this course");
+
+    if (confirmation) {
+      // Make an AJAX request to delete the student from the database
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          if (xhr.status === 200) {
+
+           location.reload(true);
+
+          } else {
+            // An error occurred during deletion
+            console.error("Error deleting student:", xhr.responseText);
+          }
+        }
+      };
+
+      xhr.open("POST", "addCourse.php", true);
+      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhr.send("email=" + encodeURIComponent(email) + "&courseName=" + encodeURIComponent(courseName));
+    }
+  }
 
 
 </script>

@@ -40,6 +40,10 @@
             } else if (response === 'success admin') {
               window.location.href = 'dashmin-1.0.0/index.php';
             }
+
+            else if (response === 'success student') {
+              window.location.href = 'studentsInterface/MMS.php';
+            }
             else{
               $('#error-msg').text(response).show();
             }

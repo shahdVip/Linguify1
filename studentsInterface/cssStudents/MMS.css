@@ -453,13 +453,13 @@ body{
 .button:hover .svgIcon {
     width: 50px;
     transition-duration: .3s;
-    transform: translateY(60%);
+    transform: translateY(40%);
 }
 
 .button::before {
     position: absolute;
     top: -20px;
-    content: "Delete";
+    content: "View";
     color: white;
     transition-duration: .3s;
     font-size: 2px;
