@@ -1,0 +1,480 @@
+CODE SEGMENT
+ASSUME CS:CODE
+
+
+PA EQU 0FF28H ; PA Data port
+PCTL EQU 0FF2BH ; 8255 Command port
+RSN EQU 00H ; PC0 bit set/reset mode of 8255 (PC)
+RS EQU 01H
+RWN EQU 02H ; PC1
+RW EQU 03H
+EN EQU 04H ; PC2 Enable = 0
+E EQU 05H ; Enable = 1
+CS1N EQU 08H ; PC4
+CS1 EQU 09H
+CS2N EQU 0Ch ; PC6
+CS2 EQU 0Dh
+ORG 22E0h ;2FE0H
+JMP START
+
+YR db ? ; column address
+pag db ? ; page address
+ZR db 0c0H ; always first row of page (don't change)
+val db ? ; value of command or data
+counter db 0
+
+START:
+; configure 8255
+mov al,80h
+mov dx,PCTL
+out dx,al
+
+
+
+; initialize LCD (Display ON command) for both halves (call sendComm procedure)
+; left half
+
+mov al, 3fh ; display on
+mov val, al
+
+call selectleft
+call sendcomm
+
+; delay
+call DELAY2MS
+; right half
+
+call selectright
+mov al,03fh
+mov val,al
+
+call sendcomm
+; delay
+
+
+MAIN:
+
+; select first column and first page
+mov pag,0b8h
+mov yr,40h
+
+; select left half of LCD and set cursor
+call selectleft
+call setCursor
+
+; get offset of character to be displayed and call sendData procedure
+; this can be repeated to print an many characters as required
+push cx
+mov cx,8h
+lpp1:
+mov si,offset CharEmpty
+call dispComm
+loop lpp1
+pop cx
+inc pag
+
+call selectleft
+call setCursor
+push cx
+mov cx,8h
+lpp2:
+mov si,offset CharEmpty
+call dispComm
+loop lpp2
+pop cx
+inc pag
+
+call selectleft
+call setCursor
+push cx
+mov cx,8h
+lpp3:
+mov si,offset CharEmpty
+call dispComm
+loop lpp3
+pop cx
+inc pag
+
+call selectleft
+call setCursor
+push cx
+mov cx,8h
+lpp4:
+mov si,offset CharEmpty
+call dispComm
+loop lpp4
+pop cx
+inc pag
+
+call selectleft
+call setCursor
+push cx
+mov cx,8h
+lpp5:
+mov si,offset CharEmpty
+call dispComm
+loop lpp5
+pop cx
+inc pag
+
+call selectleft
+call setCursor
+push cx
+mov cx,8h
+lpp6:
+mov si,offset CharEmpty
+call dispComm
+loop lpp6
+pop cx
+inc pag
+
+call selectleft
+call setCursor
+push cx
+mov cx,8h
+lpp7:
+mov si,offset CharEmpty
+call dispComm
+loop lpp7
+pop cx
+inc pag
+
+call selectleft
+call setCursor
+push cx
+mov cx,8h
+lpp8:
+mov si,offset CharEmpty
+call dispComm
+loop lpp8
+pop cx
+
+mov pag,0b8h
+mov yr,40h
+call SELECTRIGHT
+call setCursor
+push cx
+mov cx,8h
+lpp11:
+mov si,offset CharEmpty
+call dispComm
+loop lpp11
+pop cx
+inc pag
+
+call SELECTRIGHT
+call setCursor
+push cx
+mov cx,8h
+lpp12:
+mov si,offset CharEmpty
+call dispComm
+loop lpp12
+pop cx
+inc pag
+
+call SELECTRIGHT
+call setCursor
+push cx
+mov cx,8h
+lpp13:
+mov si,offset CharEmpty
+call dispComm
+loop lpp13
+pop cx
+inc pag
+
+call SELECTRIGHT
+call setCursor
+push cx
+mov cx,8h
+lpp14:
+mov si,offset CharEmpty
+call dispComm
+loop lpp14
+pop cx
+inc pag
+
+call SELECTRIGHT
+call setCursor
+push cx
+mov cx,8h
+lpp15:
+mov si,offset CharEmpty
+call dispComm
+loop lpp15
+pop cx
+inc pag
+
+call SELECTRIGHT
+call setCursor
+push cx
+mov cx,8h
+lpp16:
+mov si,offset CharEmpty
+call dispComm
+loop lpp16
+pop cx
+inc pag
+
+call SELECTRIGHT
+call setCursor
+push cx
+mov cx,8h
+lpp17:
+mov si,offset CharEmpty
+call dispComm
+loop lpp17
+pop cx
+inc pag
+
+call SELECTRIGHT
+call setCursor
+push cx
+mov cx,8h
+lpp18:
+mov si,offset CharEmpty
+call dispComm
+loop lpp18
+pop cx
+inc pag
+;------------------------------------------------------------------------------
+
+
+
+mov pag,040h
+mov yr,07bh
+call SELECTleft
+call setCursor
+;jana
+mov si,offset jana
+call dispComm
+
+
+
+mov si,offset CHARlast1
+call dispComm
+
+mov pag,040h
+mov yr,07bh
+call SELECTright
+call setCursor
+; shahd
+mov si,offset S
+call dispComm
+
+mov si,offset H
+call dispComm
+
+
+mov pag,0bch
+mov yr,0ffh
+call SELECTright
+call setCursor
+
+;hasoob 
+mov si,offset sa
+call dispComm
+
+mov si,offset nds
+call dispComm
+
+mov si,offset han
+call dispComm
+
+mov si,offset mm
+call dispComm
+
+mov si,offset qs
+call dispComm
+
+mov pag,0bch
+mov yr,0ffh
+call SELECTleft
+call setCursor
+
+
+mov si,offset bbxz
+call dispComm
+
+mov si,offset uub
+call dispComm
+
+mov si,offset su
+call dispComm
+
+mov si,offset alha
+call dispComm
+
+
+
+
+; select left half of LCD and set cursor
+
+
+; get offset of character to be displayed and call sendData procedure
+; this can be repeated to print an many characters as required
+
+
+jmp $ ; stay at current location
+; procecure to display a single character (8 columns)
+; loop through the columns of the character and call sendData
+
+dispComm:
+push cx
+mov cx,8
+
+lp:
+
+mov al,[si]
+mov val,al
+inc si
+call senddata
+
+loop lp
+pop cx
+
+RET
+
+; Procedure to send a command to LCD (command value is in variable called val)
+SendComm:
+mov dx,pa
+
+mov al,val
+out dx,al
+
+
+mov dx,PCTL
+
+
+mov al,RSN
+out dx,al
+
+mov al,RWN
+out dx,al
+
+mov al,EN
+out dx,al
+
+call DELAY2MS
+
+mov al,E
+out dx,al
+
+call DELAY2MS
+
+mov al,EN
+out dx,al
+
+RET
+
+
+
+; Procedure to send a Data (single column) to LCD (data value is in variable called val)
+SendData:
+
+mov dx,pa
+
+mov al,val
+out dx,al
+
+mov dx,PCTL
+mov al,RS
+out dx,al
+
+mov al,RWN
+out dx,al
+
+
+mov al,EN
+out dx,al
+
+call DELAY2MS
+
+mov al,E
+out dx,al
+
+call DELAY2MS
+
+mov al,EN
+out dx,al
+RET
+
+
+
+; set cursor of LCD to a certain page line and a certain column.
+; LCD half should be already selected
+
+setCursor:
+
+; set column (send YR value as command)
+
+mov al,yr
+mov val,al
+call SendComm
+
+; set page (send PAG (x address) value as command)
+mov al,pag
+mov val,al
+call SendComm
+
+; set row (send ZR value as command)
+mov al,zr
+mov val,al
+call SendComm
+
+RET
+
+; enable left half of the LCD (CS1 = 1, CS2 = 0)
+SELECTLEFT:
+mov dx,PCTL
+mov al,cs1
+out dx,al
+
+
+mov al,cs2n
+out dx,al
+
+RET
+
+
+
+; enable right half of the LCD (CS1 = 0, CS2 = 1)
+SELECTRIGHT:
+mov dx,PCTL
+mov al,cs1n
+out dx,al
+
+mov al,cs2
+out dx,al
+
+RET
+
+
+
+DELAY2MS:
+push cx
+MOV CX,78H
+LOOP $ ; current position
+pop cx
+
+RET
+
+; characters can be declared here
+CharEmpty: DB 00h, 00h, 00h, 00h, 00h, 00h, 00h, 00h ; empty block of 8x8 pixels   
+
+qs db 38h,20h,38h,20h,3dh,25h,3ch,00h
+mm db 00h,0e0h,38h,28h,38h,20h,38h,28h
+han db 40h,7eh,4ah,7ah,42h,7eh,00h,00h
+nds db 70h,00h,40h,40h,70h,40h,68h,40h
+sa db 1ch,15h,7dh,40h,70h,40h,70h,40h
+alha db 50h,50h,60h,40h,7eh,00h,7eh,00h
+su db 40h,70h,40h,70h,00h,7eh,40h,50h
+uub db 40h,70h,00h,70h,50h,0f0h,40h,70h
+bbxz db 00h,00h,00h,00h,00h,70h,40h,0c0h
+jana db 70h,40h,70h,10h,1ah,10h,54h,18h
+s db 20h,20h,20h,38h,24h,3ah,24h,38h
+h db 20h,20h,28h,30h,20h,f8h,a8h,d8h
+
+CODE ENDS
+END START
